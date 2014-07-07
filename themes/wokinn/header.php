@@ -31,7 +31,7 @@
 				<div class="width clearfix">
 
 					<h1 class="block columna xmall-8 medium-2 center no-center-medium ">
-						<a href="#">
+						<a href="/wok-inn">
 							<img src="<?php echo THEMEPATH; ?>images/logo.png" alt="" />
 						</a>
 					</h1>
@@ -57,11 +57,11 @@
 						<div class="clear"></div>
 
 						<nav class="clearfix full navegacion no-xmall medium">
-							<a class="block left text-center active" href="index.html">Menú</a>
-							<a class="block left text-center" href="nosotros.html">Nosotros</a>
-							<a class="block left text-center" href="eventos.html">Eventos</a>
-							<a class="block left text-center" href="se-verde.html">Sé verde</a>
-							<a class="block left text-center" href="contacto.html">Contacto</a>
+							<a class="block left text-center" href="index.html">Menú</a>
+							<a class="block left text-center <?php if ( 'nosotros' == get_post_type() ){ echo 'active'; } ?>" href="<?php echo site_url('nosotros'); ?>">Nosotros</a>
+							<a class="block left text-center <?php if ( 'eventos' == get_post_type() ){ echo 'active'; } ?>" href="<?php echo site_url('eventos'); ?>">Eventos</a>
+							<a class="block left text-center <?php if ( 'se-verde' == get_post_type() ){ echo 'active'; } ?>" href="<?php echo site_url('se-verde'); ?>">Sé Verde</a>
+							<a class="block left text-center <?php if ( is_page('contacto') ){ echo 'class="active"'; } ?>" href="<?php echo site_url('contacto'); ?>">Contacto</a>
 						</nav>
 
 					</div><!-- xmall-10 -->
@@ -69,4 +69,4 @@
 				</div>
 			</header>
 
-			<div class="main">
+			<div class="main width">
