@@ -38,7 +38,7 @@
 		mostrarMenu();
 		toggleMenuMovil();
 
-		creaMapa();
+		//creaMapa();
 
 
 		function isotope(){

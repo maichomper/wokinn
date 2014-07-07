@@ -2,7 +2,17 @@
 <!-- Insert content here -->
 
 		<section class="slider full">
-			<img class="full" src="<?php echo THEMEPATH; ?>images/slider.jpg" />
+			<div class="cycle-slideshow"
+				data-cycle-fx="scrollHorz"
+				data-cycle-swipe="true"
+			>
+    			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" /> 
+    			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" /> 
+    			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" /> 
+    			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" /> 
+
+   			<div class="cycle-controls cycle-prev"><i class="fa fa-chevron-left"></i></div>
+   			<div class="cycle-controls cycle-next"><i class="fa fa-chevron-right"></i></div>
 		</section>
 
 		<h2 class="block text-center">
