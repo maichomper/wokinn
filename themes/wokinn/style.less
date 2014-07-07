@@ -295,7 +295,7 @@ body{ background: url('images/bg.png') repeat; .font; }
 
 section{ margin-bottom: @margen; }
 
-.grid{
+.grid{ width:100%;
 	article{ margin-bottom: @margen;
 		p:last-child{ margin-bottom: 0; }
 	}
@@ -479,14 +479,12 @@ header { padding:@margen*2 0;
 			> *{ margin-bottom:0; }
 		}
 	}
-
 }
 
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
 
 }
-
 
  /* min-width 1025px, large screens */
 @media only screen and (min-width: 64.063em) {

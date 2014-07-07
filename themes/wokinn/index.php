@@ -34,6 +34,7 @@
 					</li>
 				</ul>
 			</article>
+
 			<article class="categoria columna xmall-12 medium-4 clearfix">
 				<img src="<?php echo THEMEPATH; ?>images/kiuss.jpg" />
 				<h3>Kiuss / Onigiris</h3>
@@ -52,6 +53,7 @@
 				</ul>
 				<span></span>
 			</article>
+
 			<article class="categoria columna xmall-12 medium-4 clearfix">
 				<img src="<?php echo THEMEPATH; ?>images/dumplings.jpg" />
 				<h3>Gyozas / Rangoons / Dumplings</h3>
@@ -76,6 +78,7 @@
 					</li>
 				</ul>
 			</article>
+			
 			<article class="categoria columna xmall-12 medium-4 clearfix">
 				<img src="<?php echo THEMEPATH; ?>images/kiuss.jpg" />
 				<h3>Kiuss / Onigiris</h3>

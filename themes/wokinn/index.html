@@ -66,9 +66,11 @@
 						<nav class="clearfix full navegacion no-xmall medium">
 							<a class="block left text-center active" href="index.html">Menú</a>
 							<a class="block left text-center" href="nosotros.html">Nosotros</a>
-							<a class="block left text-center" href="eventos.html">Eventos</a>
+							<a class="block left text-center" <?php if ( 'eventos' == get_post_type() ){ echo 'class="active"'; } ?> href="<?php echo site_url('eventos'); ?>">
+							</a>
 							<a class="block left text-center" href="se-verde.html">Sé verde</a>
 							<a class="block left text-center" href="contacto.html">Contacto</a>
+							
 						</nav>
 
 					</div><!-- xmall-10 -->
