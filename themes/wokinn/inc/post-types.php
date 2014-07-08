@@ -134,6 +134,38 @@
 		);
 		register_post_type( 'menu', $argsMenu );
 
+		// Slider
+		$labelsSlider = array(
+			'name'          => 'Slider',
+			'singular_name' => 'Slider',
+			'add_new'       => 'Nuevo Slider',
+			'add_new_item'  => 'Nuevo Slider',
+			'edit_item'     => 'Editar Slider',
+			'new_item'      => 'Slider',
+			'all_items'     => 'Todos',
+			'view_item'     => 'Ver Slider',
+			'search_items'  => 'Buscar Slider',
+			'not_found'     => 'No se encontro',
+			'Slider_name'     => 'Slider'
+		);
+
+		$argsSlider = array(
+			'labels'             => $labelsSlider,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_Slider'       => true,
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'slider' ),
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'Slider_position'      => 6,
+			'taxonomies'         => array( 'category' ),
+			'supports'           => array( 'title', 'editor', 'thumbnail' )
+		);
+		register_post_type( 'slider', $argsSlider );
+
 		
 
 	});

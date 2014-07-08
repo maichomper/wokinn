@@ -3,10 +3,33 @@
 
 		<section class="slider full">
 			<div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-swipe="true">
+				<?php
+				$sliderArgs = array(
+					'post_type' 	=> 'slider'
+				);
+				$sliderQuery = new WP_Query($sliderArgs);
+
+				if( $sliderQuery->have_posts() ) : while( $sliderQuery->have_posts() ) : $sliderQuery->the_post();
+
+					$attachmentsArgs = array(
+			            'post_type' => 'attachment',
+			            'posts_per_page' => -1,
+			            'post_parent' => $post->ID
+			        );
+			        $attachments = get_posts($attachmentsArgs);
+
+			        if ( $attachments ) {
+			            foreach ( $attachments as $attachment ) {
+			            	$imgUrl = wp_get_attachment_image_src($attachment->ID, 'full');
+			            	echo '<img src="'.$imgUrl[0].'" alt="">';
+			            }
+			        }
+				endwhile; endif;  wp_reset_query();?>
+
+    			<!-- <img src="<?php echo THEMEPATH; ?>images/slider.jpg" /> 
     			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" /> 
     			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" /> 
-    			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" /> 
-    			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" /> 
+    			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" />  -->
    			<div class="cycle-controls cycle-prev">
    				<i class="fa fa-chevron-left"></i>
    			</div>
