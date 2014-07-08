@@ -83,8 +83,16 @@
 						<span>¡Pídelos para tu sopa!</span>
 					</li>
 					<li class="clearfix">
+						
+						<!--PRUEBA DE TOOLTIP-->
+
+						
+    					<div id="content">
+    
+						</div>
+
 						<p class="columna xmall-8">Rangoons de queso crema</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
+						<p class="columna xmall-4 text-right">$45.00</p>		
 					</li>
 				</ul>
 			</article>
