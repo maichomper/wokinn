@@ -7,17 +7,22 @@
 
 		<div class="columna xmall-12 medium-4 text-center block">
 			<h4>Teléfonos</h4>
-			<a class="block" href="tel:5207-2840">5207-2840</a>
-			<a class="block" href="tel:5207-2840">5207-2619</a>
+			<a class="block" href="tel:<?php echo get_post_meta($post->ID, '_telefono1_meta', true); ?>">
+				<?php echo get_post_meta($post->ID, '_telefono1_meta', true); ?>
+			</a>
+			<a class="block" href="tel:<?php echo get_post_meta($post->ID, '_telefono2_meta', true); ?>">
+				<?php echo get_post_meta($post->ID, '_telefono2_meta', true); ?>
+			</a>
+
 		</div>
 		<div class="columna xmall-12 medium-4 text-center block">
 			<h4>Correo electrónico</h4>
-			<a href="mailto:info@wokinn.com.mx">info@wokinn.com.mx</a>
+			<a href=href="tel:<?php echo get_post_meta($post->ID, '_email_meta', true); ?>"><?php echo get_post_meta($post->ID, '_email_meta', true); ?></a>
 		</div>
 		<div class="columna xmall-12 medium-4 text-center block">
 			<h4>Dirección</h4>
 			<address>
-				<p>Álvaro Obregón 187-A Col. Roma Norte, Del. Cuauhtémoc 06700 México, DF.</p>
+				<p><?php echo get_post_meta($post->ID, '_direccion_meta', true); ?></p>
 			</address>
 		</div>
 		<form class="columna xmall-12 medium-6 clearfix forma-contacto">

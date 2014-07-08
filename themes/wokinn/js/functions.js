@@ -31,8 +31,8 @@
 		});
 
 		//TOOLTIP
-		$("#content").html('<a id="riverroad" href="#" title="" >image of 1 Maple St.</a>');
-  	 	$("#content #riverroad").tooltip({ content: '<img src="http://icdn.pro/images/fr/a/v/avatar-barbe-brun-homme-utilisateur-icone-9665-128.png" />' }); 
+		/*$("#content").html('<a id="riverroad" href="#" title="" >image of 1 Maple St.</a>');
+  	 	$("#content #riverroad").tooltip({ content: '<img src="http://icdn.pro/images/fr/a/v/avatar-barbe-brun-homme-utilisateur-icone-9665-128.png" />' }); */
 	
  	
 
@@ -44,7 +44,7 @@
 		mostrarMenu();
 		toggleMenuMovil();
 
-		//creaMapa();
+		creaMapa();
 
 
 		function isotope(){
@@ -120,7 +120,7 @@
 		function initialize() {
 			var centro = new google.maps.LatLng(lat, lng);
 			var mapOptions = {
-				zoom: 16,
+				zoom: 17,
 				center: centro,
 				styles: styles
 			};
