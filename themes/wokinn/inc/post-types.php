@@ -102,6 +102,38 @@
 		);
 		register_post_type( 'nosotros', $argsNosotros );
 
+		// Menu
+		$labelsMenu = array(
+			'name'          => 'Menú',
+			'singular_name' => 'Menu',
+			'add_new'       => 'Nuevo Menu',
+			'add_new_item'  => 'Nuevo Menu',
+			'edit_item'     => 'Editar Menu',
+			'new_item'      => 'Menu',
+			'all_items'     => 'Todos',
+			'view_item'     => 'Ver Menu',
+			'search_items'  => 'Buscar Menu',
+			'not_found'     => 'No se encontro',
+			'menu_name'     => 'Menu'
+		);
+
+		$argsMenu = array(
+			'labels'             => $labelsMenu,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'menu' ),
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'menu_position'      => 6,
+			'taxonomies'         => array( 'category' ),
+			'supports'           => array( 'title', 'editor', 'thumbnail' )
+		);
+		register_post_type( 'menu', $argsMenu );
+
 		
 
 	});

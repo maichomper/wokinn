@@ -8,6 +8,7 @@
 	add_action('add_meta_boxes', function(){
 
 		// add_meta_box( id, title, name_meta_callback, post_type, context, priority );
+		add_meta_box( 'menu', 'Menú', 'metabox_menu', 'menu', 'normal', 'default' );
 
 	});
 

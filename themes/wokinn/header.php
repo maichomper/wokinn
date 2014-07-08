@@ -57,7 +57,7 @@
 						<div class="clear"></div>
 
 						<nav class="clearfix full navegacion no-xmall medium">
-							<a class="block left text-center" href="index.html">Menú</a>
+							<a class="block left text-center <?php if ( is_home() ){ echo 'active'; } ?>" href="<?php echo home_url(); ?>">Menú</a>
 							<a class="block left text-center <?php if ( 'nosotros' == get_post_type() ){ echo 'active'; } ?>" href="<?php echo site_url('nosotros'); ?>">Nosotros</a>
 							<a class="block left text-center <?php if ( 'eventos' == get_post_type() ){ echo 'active'; } ?>" href="<?php echo site_url('eventos'); ?>">Eventos</a>
 							<a class="block left text-center <?php if ( 'se-verde' == get_post_type() ){ echo 'active'; } ?>" href="<?php echo site_url('se-verde'); ?>">Sé Verde</a>
