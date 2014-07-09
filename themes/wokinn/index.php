@@ -46,7 +46,9 @@
 			<?php
 				$menuArgs = array(
 					'post_type' 		=> 'menu',
-					'posts_per_page'	=> -1
+					'category_name' 	=> 'comida',
+					'posts_per_page'	=> -1,
+					'order'				=> 'ASC'
 				);
 				$menuQuery = new WP_Query($menuArgs);
 
@@ -69,14 +71,14 @@
 								);
 								$fotoPlatillo = rwmb_meta( 'menu_foto'.$i, $fotoArgs ); ?>
 
-								<li class="clearfix">
-									<?php if ( $nombrePlatillo != NULL ){ ?> <p class="columna xmall-8"><?php echo $nombrePlatillo; ?></p><?php } ?>
-									<?php if ( $precioPlatillo != NULL ){ ?> <p class="columna xmall-4 text-right"><?php echo '$'.$precioPlatillo; ?></p><?php } ?>
-									<div class="clear"></div>
-									<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
-
-								</li>
-								<?php
+								<?php if ( $nombrePlatillo != NULL ){ ?>
+									<li class="clearfix">
+										<p class="columna xmall-8"><?php echo $nombrePlatillo; ?></p>
+										<?php if ( $precioPlatillo != NULL ){ ?> <p class="columna xmall-4 text-right"><?php echo '$'.$precioPlatillo; ?></p><?php } ?>
+										<div class="clear"></div>
+										<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
+									</li>
+								<?php }
 							}
 						?>
 
@@ -88,9 +90,169 @@
 
 		</section>
 
+		<div class="clear"></div>
+
+		<h2 class="block text-center">
+			<span class="center">Woks</span>
+		</h2>
+
+		<section class="menu grid width clearfix">
+			<?php
+				$menuArgs = array(
+					'post_type' 		=> 'menu',
+					'category_name' 	=> 'woks',
+					'posts_per_page'	=> -1,
+					'order'				=> 'ASC'
+				);
+				$menuQuery = new WP_Query($menuArgs);
+
+				if( $menuQuery->have_posts() ) : while( $menuQuery->have_posts() ) : $menuQuery->the_post();
+			?>
+				<article class="categoria columna xmall-12 medium-4 clearfix">
+					<?php the_post_thumbnail( "medium" ); ?>
+					<h3><?php the_title(); ?></h3>
+					<span class="block"><?php the_content(); ?></span>
+					<ul>
+						<?php
+
+							for ($i = 1; $i <= 25; $i++) {
+								$nombrePlatillo = rwmb_meta( 'menu_nombre'.$i );
+								$precioPlatillo = rwmb_meta( 'menu_precio'.$i );
+								$descripcionPlatillo = rwmb_meta( 'menu_descripcion'.$i );
+								$fotoArgs = array(
+									'type' 	=> 'image',
+									'size' 	=> 'full'
+								);
+								$fotoPlatillo = rwmb_meta( 'menu_foto'.$i, $fotoArgs ); ?>
+
+								<?php if ( $nombrePlatillo != NULL ){ ?>
+									<li class="clearfix">
+										<p class="columna xmall-8"><?php echo $nombrePlatillo; ?></p>
+										<?php if ( $precioPlatillo != NULL ){ ?> <p class="columna xmall-4 text-right"><?php echo '$'.$precioPlatillo; ?></p><?php } ?>
+										<div class="clear"></div>
+										<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
+									</li>
+								<?php }
+							}
+						?>
+
+					</ul>
+				</article>
+			<?php
+				endwhile; endif;  wp_reset_query();
+			?>
+
+		</section>
+
+		<div class="clear"></div>
+
+		<h2 class="block text-center">
+			<span class="center">Combos</span>
+		</h2>
+
+		<section class="menu grid width clearfix">
+			<?php
+				$menuArgs = array(
+					'post_type' 		=> 'menu',
+					'category_name' 	=> 'combos',
+					'posts_per_page'	=> -1,
+					'order'				=> 'ASC'
+				);
+				$menuQuery = new WP_Query($menuArgs);
+
+				if( $menuQuery->have_posts() ) : while( $menuQuery->have_posts() ) : $menuQuery->the_post();
+			?>
+				<article class="categoria columna xmall-12 medium-4 clearfix">
+					<?php the_post_thumbnail( "medium" ); ?>
+					<h3><?php the_title(); ?></h3>
+					<span class="block"><?php the_content(); ?></span>
+					<ul>
+						<?php
+
+							for ($i = 1; $i <= 25; $i++) {
+								$nombrePlatillo = rwmb_meta( 'menu_nombre'.$i );
+								$precioPlatillo = rwmb_meta( 'menu_precio'.$i );
+								$descripcionPlatillo = rwmb_meta( 'menu_descripcion'.$i );
+								$fotoArgs = array(
+									'type' 	=> 'image',
+									'size' 	=> 'full'
+								);
+								$fotoPlatillo = rwmb_meta( 'menu_foto'.$i, $fotoArgs ); ?>
+
+								<?php if ( $nombrePlatillo != NULL ){ ?>
+									<li class="clearfix">
+										<p class="columna xmall-8"><?php echo $nombrePlatillo; ?></p>
+										<?php if ( $precioPlatillo != NULL ){ ?> <p class="columna xmall-4 text-right"><?php echo '$'.$precioPlatillo; ?></p><?php } ?>
+										<div class="clear"></div>
+										<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
+									</li>
+								<?php }
+							}
+						?>
+
+					</ul>
+				</article>
+			<?php
+				endwhile; endif;  wp_reset_query();
+			?>
+
+		</section>
+
+		<div class="clear"></div>
+
+		<h2 class="block text-center">
+			<span class="center">Bebidas</span>
+		</h2>
+
+		<section class="menu grid width clearfix">
+			<?php
+				$menuArgs = array(
+					'post_type' 		=> 'menu',
+					'category_name' 	=> 'bebidad',
+					'posts_per_page'	=> -1,
+					'order'				=> 'ASC'
+				);
+				$menuQuery = new WP_Query($menuArgs);
+
+				if( $menuQuery->have_posts() ) : while( $menuQuery->have_posts() ) : $menuQuery->the_post();
+			?>
+				<article class="categoria columna xmall-12 medium-4 clearfix">
+					<?php the_post_thumbnail( "medium" ); ?>
+					<h3><?php the_title(); ?></h3>
+					<span class="block"><?php the_content(); ?></span>
+					<ul>
+						<?php
+
+							for ($i = 1; $i <= 25; $i++) {
+								$nombrePlatillo = rwmb_meta( 'menu_nombre'.$i );
+								$precioPlatillo = rwmb_meta( 'menu_precio'.$i );
+								$descripcionPlatillo = rwmb_meta( 'menu_descripcion'.$i );
+								$fotoArgs = array(
+									'type' 	=> 'image',
+									'size' 	=> 'full'
+								);
+								$fotoPlatillo = rwmb_meta( 'menu_foto'.$i, $fotoArgs ); ?>
+
+								<?php if ( $nombrePlatillo != NULL ){ ?>
+									<li class="clearfix">
+										<p class="columna xmall-8"><?php echo $nombrePlatillo; ?></p>
+										<?php if ( $precioPlatillo != NULL ){ ?> <p class="columna xmall-4 text-right"><?php echo '$'.$precioPlatillo; ?></p><?php } ?>
+										<div class="clear"></div>
+										<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
+									</li>
+								<?php }
+							}
+						?>
+
+					</ul>
+				</article>
+			<?php
+				endwhile; endif;  wp_reset_query();
+			?>
+
+		</section>
 
 	</div><!-- main -->
-
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
