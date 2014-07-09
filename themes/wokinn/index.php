@@ -203,7 +203,7 @@
 			?>
 
 		</section>
-
+		<p class="text-center">Por $5 pesos cambia tu agua chica por grande o refresco Coca Cola, por $15 pesos cámbiala por una cerveza nacional.</p>
 		<div class="clear"></div>
 
 		<h2 class="block text-center">
@@ -260,5 +260,6 @@
 			?>
 
 		</section>
+		<p class="text-center">Todos los platillos incluyen IVA y están contemplados en Moneda Nacional.</p>
 
 <?php get_footer(); ?>
