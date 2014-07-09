@@ -75,7 +75,14 @@
 										<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
 									</li>
 									<div class="hide">
-										<img src="<?php echo THEMEPATH; ?>images/estufa.jpg" alt="">
+										<?php
+										echo '<pre>';
+											print_r($fotoPlatillo);
+										echo '</pre>';
+
+										echo $fotoPlatillo[93]['url'];
+
+										?>
 									</div>
 								<?php }
 							}
