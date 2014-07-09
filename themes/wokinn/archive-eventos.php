@@ -1,4 +1,4 @@
-<?php get_header(); ?>	
+<?php get_header(); ?>
 	<h2 class="block text-center">
 		<span class="center">Eventos</span>
 	</h2>
@@ -15,11 +15,10 @@
 		<section class="estufa-wok clearfix columna xmall-12 medium-4">
 			<?php the_post_thumbnail( "medium" ); ?>
 			<h3><?php the_title(); ?></h3>
-			<p><?php the_content(); ?></p>	
+			<p><?php the_content(); ?></p>
 		</section>
-	<?php		
+	<?php
 		endwhile; endif;  wp_reset_query();
 	?>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

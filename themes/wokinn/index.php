@@ -68,12 +68,15 @@
 								$fotoPlatillo = rwmb_meta( 'menu_foto'.$i, $fotoArgs ); ?>
 
 								<?php if ( $nombrePlatillo != NULL ){ ?>
-									<li class="clearfix">
-										<p class="columna xmall-8"><?php echo $nombrePlatillo; ?></p>
+									<li class="clearfix hasTooltip">
+										<p class="columna xmall-8 nombre"><?php echo $nombrePlatillo; ?></p>
 										<?php if ( $precioPlatillo != NULL ){ ?> <p class="columna xmall-4 text-right"><?php echo '$'.$precioPlatillo; ?></p><?php } ?>
 										<div class="clear"></div>
 										<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
 									</li>
+									<div class="hide">
+										<img src="<?php echo THEMEPATH; ?>images/estufa.jpg" alt="">
+									</div>
 								<?php }
 							}
 						?>
@@ -204,7 +207,7 @@
 			<?php
 				$menuArgs = array(
 					'post_type' 		=> 'menu',
-					'category_name' 	=> 'bebidad',
+					'category_name' 	=> 'bebidas',
 					'posts_per_page'	=> -1,
 					'order'				=> 'ASC'
 				);
@@ -230,12 +233,15 @@
 								$fotoPlatillo = rwmb_meta( 'menu_foto'.$i, $fotoArgs ); ?>
 
 								<?php if ( $nombrePlatillo != NULL ){ ?>
-									<li class="clearfix">
+									<li class="clearfix hasTooltip">
 										<p class="columna xmall-8"><?php echo $nombrePlatillo; ?></p>
 										<?php if ( $precioPlatillo != NULL ){ ?> <p class="columna xmall-4 text-right"><?php echo '$'.$precioPlatillo; ?></p><?php } ?>
 										<div class="clear"></div>
 										<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
 									</li>
+									<div class="hide">
+										<p><b><?php echo $nombrePlatillo; ?></b> for your tooltip <i>here</i>!</p>
+									</div>
 								<?php }
 							}
 						?>
@@ -249,7 +255,4 @@
 		</section>
 		<p class="text-center">Todos los platillos incluyen IVA y están contemplados en Moneda Nacional.</p>
 
-	</div><!-- main -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
