@@ -26,9 +26,9 @@
 			        }
 				endwhile; endif;  wp_reset_query();?>
 
-    			<!-- <img src="<?php echo THEMEPATH; ?>images/slider.jpg" /> 
-    			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" /> 
-    			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" /> 
+    			<!-- <img src="<?php echo THEMEPATH; ?>images/slider.jpg" />
+    			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" />
+    			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" />
     			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" />  -->
    			<div class="cycle-controls cycle-prev">
    				<i class="fa fa-chevron-left"></i>
@@ -46,7 +46,9 @@
 			<?php
 				$menuArgs = array(
 					'post_type' 		=> 'menu',
-					'posts_per_page'	=> -1
+					'category_name' 	=> 'comida',
+					'posts_per_page'	=> -1,
+					'order'				=> 'ASC'
 				);
 				$menuQuery = new WP_Query($menuArgs);
 
@@ -57,171 +59,200 @@
 					<h3><?php the_title(); ?></h3>
 					<span class="block"><?php the_content(); ?></span>
 					<ul>
-						<li class="clearfix">
-							<p class="columna xmall-8">Gyozas pollo</p>
-							<p class="columna xmall-4 text-right">$45.00</p>
-						</li>
-						<li class="clearfix">
-							<p class="columna xmall-8">Gyozas carne</p>
-							<p class="columna xmall-4 text-right">$45.00</p>
-						</li>
-						<li class="clearfix">
-							<p class="columna xmall-8">Gyozas verduras</p>
-							<p class="columna xmall-4 text-right">$45.00</p>
-							<span>¡Pídelos para tu sopa!</span>
-						</li>
-						<li class="clearfix">
-							<p class="columna xmall-8">Rangoons de queso crema</p>
-							<p class="columna xmall-4 text-right">$45.00</p>
-						</li>
+						<?php
+
+							for ($i = 1; $i <= 25; $i++) {
+								$nombrePlatillo = rwmb_meta( 'menu_nombre'.$i );
+								$precioPlatillo = rwmb_meta( 'menu_precio'.$i );
+								$descripcionPlatillo = rwmb_meta( 'menu_descripcion'.$i );
+								$fotoArgs = array(
+									'type' 	=> 'image',
+									'size' 	=> 'full'
+								);
+								$fotoPlatillo = rwmb_meta( 'menu_foto'.$i, $fotoArgs ); ?>
+
+								<?php if ( $nombrePlatillo != NULL ){ ?>
+									<li class="clearfix">
+										<p class="columna xmall-8"><?php echo $nombrePlatillo; ?></p>
+										<?php if ( $precioPlatillo != NULL ){ ?> <p class="columna xmall-4 text-right"><?php echo '$'.$precioPlatillo; ?></p><?php } ?>
+										<div class="clear"></div>
+										<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
+									</li>
+								<?php }
+							}
+						?>
+
 					</ul>
 				</article>
-			<?php		
+			<?php
 				endwhile; endif;  wp_reset_query();
 			?>
 
-			<article class="categoria columna xmall-12 medium-4 clearfix">
-				<img src="<?php echo THEMEPATH; ?>images/dumplings.jpg" />
-				<h3>Gyozas / Rangoons / Dumplings</h3>
-				<span class="block">Empanadas orientales fritas o al vapor</span>
-				<ul>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas pollo</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-					</li>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas carne</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-					</li>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas verduras</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span>¡Pídelos para tu sopa!</span>
-					</li>
-					<li class="clearfix">
-						<p class="columna xmall-8">Rangoons de queso crema</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-					</li>
-				</ul>
-			</article>
-
-			<article class="categoria columna xmall-12 medium-4 clearfix">
-				<img src="<?php echo THEMEPATH; ?>images/kiuss.jpg" />
-				<h3>Kiuss / Onigiris</h3>
-				<span class="block">Acompañados de salsas dulce y chipotle</span>
-				<ul>
-					<li>
-						<p class="columna xmall-8">Kiuss queso crema</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span>Esferas de arroz empaniadas</span>
-					</li>
-					<li>
-						<p class="columna xmall-8">Kiuss manchego aceituna</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span></span>
-					</li>
-				</ul>
-				<span></span>
-			</article>
-
-			<article class="categoria columna xmall-12 medium-4 clearfix">
-				<img src="<?php echo THEMEPATH; ?>images/dumplings.jpg" />
-				<h3>Gyozas / Rangoons / Dumplings</h3>
-				<span class="block">Empanadas orientales fritas o al vapor</span>
-				<ul>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas pollo</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-					</li>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas carne</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-					</li>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas verduras</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span>¡Pídelos para tu sopa!</span>
-					</li>
-					<li class="clearfix">
-						
-						<!--PRUEBA DE TOOLTIP-->
-
-						
-    					<div id="content">
-    
-						</div>
-
-						<p class="columna xmall-8">Rangoons de queso crema</p>
-						<p class="columna xmall-4 text-right">$45.00</p>		
-					</li>
-				</ul>
-			</article>
-			
-			<article class="categoria columna xmall-12 medium-4 clearfix">
-				<img src="<?php echo THEMEPATH; ?>images/kiuss.jpg" />
-				<h3>Kiuss / Onigiris</h3>
-				<span class="block">Acompañados de salsas dulce y chipotle</span>
-				<ul>
-					<li>
-						<p class="columna xmall-8">Kiuss queso crema</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span>Esferas de arroz empaniadas</span>
-					</li>
-					<li>
-						<p class="columna xmall-8">Kiuss manchego aceituna</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span></span>
-					</li>
-				</ul>
-				<span></span>
-			</article>
-			<article class="categoria columna xmall-12 medium-4 clearfix">
-				<img src="<?php echo THEMEPATH; ?>images/dumplings.jpg" />
-				<h3>Gyozas / Rangoons / Dumplings</h3>
-				<span class="block">Empanadas orientales fritas o al vapor</span>
-				<ul>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas pollo</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-					</li>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas carne</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-					</li>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas verduras</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span>¡Pídelos para tu sopa!</span>
-					</li>
-					<li class="clearfix">
-						<p class="columna xmall-8">Rangoons de queso crema</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-					</li>
-				</ul>
-			</article>
-			<article class="categoria columna xmall-12 medium-4 clearfix">
-				<img src="<?php echo THEMEPATH; ?>images/kiuss.jpg" />
-				<h3>Kiuss / Onigiris</h3>
-				<span class="block">Acompañados de salsas dulce y chipotle</span>
-				<ul>
-					<li>
-						<p class="columna xmall-8">Kiuss queso crema</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span>Esferas de arroz empaniadas</span>
-					</li>
-					<li>
-						<p class="columna xmall-8">Kiuss manchego aceituna</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span></span>
-					</li>
-				</ul>
-				<span></span>
-			</article>
 		</section>
 
+		<div class="clear"></div>
+
+		<h2 class="block text-center">
+			<span class="center">Woks</span>
+		</h2>
+
+		<section class="menu grid width clearfix">
+			<?php
+				$menuArgs = array(
+					'post_type' 		=> 'menu',
+					'category_name' 	=> 'woks',
+					'posts_per_page'	=> -1,
+					'order'				=> 'ASC'
+				);
+				$menuQuery = new WP_Query($menuArgs);
+
+				if( $menuQuery->have_posts() ) : while( $menuQuery->have_posts() ) : $menuQuery->the_post();
+			?>
+				<article class="categoria columna xmall-12 medium-4 clearfix">
+					<?php the_post_thumbnail( "medium" ); ?>
+					<h3><?php the_title(); ?></h3>
+					<span class="block"><?php the_content(); ?></span>
+					<ul>
+						<?php
+
+							for ($i = 1; $i <= 25; $i++) {
+								$nombrePlatillo = rwmb_meta( 'menu_nombre'.$i );
+								$precioPlatillo = rwmb_meta( 'menu_precio'.$i );
+								$descripcionPlatillo = rwmb_meta( 'menu_descripcion'.$i );
+								$fotoArgs = array(
+									'type' 	=> 'image',
+									'size' 	=> 'full'
+								);
+								$fotoPlatillo = rwmb_meta( 'menu_foto'.$i, $fotoArgs ); ?>
+
+								<?php if ( $nombrePlatillo != NULL ){ ?>
+									<li class="clearfix">
+										<p class="columna xmall-8"><?php echo $nombrePlatillo; ?></p>
+										<?php if ( $precioPlatillo != NULL ){ ?> <p class="columna xmall-4 text-right"><?php echo '$'.$precioPlatillo; ?></p><?php } ?>
+										<div class="clear"></div>
+										<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
+									</li>
+								<?php }
+							}
+						?>
+
+					</ul>
+				</article>
+			<?php
+				endwhile; endif;  wp_reset_query();
+			?>
+
+		</section>
+
+		<div class="clear"></div>
+
+		<h2 class="block text-center">
+			<span class="center">Combos</span>
+		</h2>
+
+		<section class="menu grid width clearfix">
+			<?php
+				$menuArgs = array(
+					'post_type' 		=> 'menu',
+					'category_name' 	=> 'combos',
+					'posts_per_page'	=> -1,
+					'order'				=> 'ASC'
+				);
+				$menuQuery = new WP_Query($menuArgs);
+
+				if( $menuQuery->have_posts() ) : while( $menuQuery->have_posts() ) : $menuQuery->the_post();
+			?>
+				<article class="categoria columna xmall-12 medium-4 clearfix">
+					<?php the_post_thumbnail( "medium" ); ?>
+					<h3><?php the_title(); ?></h3>
+					<span class="block"><?php the_content(); ?></span>
+					<ul>
+						<?php
+
+							for ($i = 1; $i <= 25; $i++) {
+								$nombrePlatillo = rwmb_meta( 'menu_nombre'.$i );
+								$precioPlatillo = rwmb_meta( 'menu_precio'.$i );
+								$descripcionPlatillo = rwmb_meta( 'menu_descripcion'.$i );
+								$fotoArgs = array(
+									'type' 	=> 'image',
+									'size' 	=> 'full'
+								);
+								$fotoPlatillo = rwmb_meta( 'menu_foto'.$i, $fotoArgs ); ?>
+
+								<?php if ( $nombrePlatillo != NULL ){ ?>
+									<li class="clearfix">
+										<p class="columna xmall-8"><?php echo $nombrePlatillo; ?></p>
+										<?php if ( $precioPlatillo != NULL ){ ?> <p class="columna xmall-4 text-right"><?php echo '$'.$precioPlatillo; ?></p><?php } ?>
+										<div class="clear"></div>
+										<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
+									</li>
+								<?php }
+							}
+						?>
+
+					</ul>
+				</article>
+			<?php
+				endwhile; endif;  wp_reset_query();
+			?>
+
+		</section>
+
+		<div class="clear"></div>
+
+		<h2 class="block text-center">
+			<span class="center">Bebidas</span>
+		</h2>
+
+		<section class="menu grid width clearfix">
+			<?php
+				$menuArgs = array(
+					'post_type' 		=> 'menu',
+					'category_name' 	=> 'bebidad',
+					'posts_per_page'	=> -1,
+					'order'				=> 'ASC'
+				);
+				$menuQuery = new WP_Query($menuArgs);
+
+				if( $menuQuery->have_posts() ) : while( $menuQuery->have_posts() ) : $menuQuery->the_post();
+			?>
+				<article class="categoria columna xmall-12 medium-4 clearfix">
+					<?php the_post_thumbnail( "medium" ); ?>
+					<h3><?php the_title(); ?></h3>
+					<span class="block"><?php the_content(); ?></span>
+					<ul>
+						<?php
+
+							for ($i = 1; $i <= 25; $i++) {
+								$nombrePlatillo = rwmb_meta( 'menu_nombre'.$i );
+								$precioPlatillo = rwmb_meta( 'menu_precio'.$i );
+								$descripcionPlatillo = rwmb_meta( 'menu_descripcion'.$i );
+								$fotoArgs = array(
+									'type' 	=> 'image',
+									'size' 	=> 'full'
+								);
+								$fotoPlatillo = rwmb_meta( 'menu_foto'.$i, $fotoArgs ); ?>
+
+								<?php if ( $nombrePlatillo != NULL ){ ?>
+									<li class="clearfix">
+										<p class="columna xmall-8"><?php echo $nombrePlatillo; ?></p>
+										<?php if ( $precioPlatillo != NULL ){ ?> <p class="columna xmall-4 text-right"><?php echo '$'.$precioPlatillo; ?></p><?php } ?>
+										<div class="clear"></div>
+										<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
+									</li>
+								<?php }
+							}
+						?>
+
+					</ul>
+				</article>
+			<?php
+				endwhile; endif;  wp_reset_query();
+			?>
+
+		</section>
 
 	</div><!-- main -->
-
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

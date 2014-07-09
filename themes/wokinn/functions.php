@@ -10,7 +10,7 @@
 	define( 'CSSPATH', get_template_directory_uri() . '/css/' );
 
 	define( 'THEMEPATH', get_template_directory_uri() . '/' );
-	
+
 	define( 'SITEURL', site_url('/') );
 
 
@@ -59,10 +59,10 @@
 
 
 	/*add_action( 'after_setup_theme', function () {
-		
+
 		$frontPage = get_page_by_path('home', OBJECT);
 		$blogPage  = get_page_by_path('blog', OBJECT);
-		
+
 		if ( $frontPage AND $blogPage ){
 			update_option('show_on_front', 'page');
 			update_option('page_on_front', $frontPage->ID);
@@ -87,7 +87,6 @@
 
 
 	add_filter( 'admin_footer_text', function() {
-		echo 'Creado por <a href="http://hacemoscodigo.com">Los Maquiladores</a>. ';
 		echo 'Powered by <a href="http://www.wordpress.org">WordPress</a>';
 	});
 
@@ -102,9 +101,9 @@
 	}
 
 	if ( function_exists('add_image_size') ){
-		
+
 		// add_image_size( 'size_name', 200, 200, true );
-		
+
 		// cambiar el tamaño del thumbnail
 		/*
 		update_option( 'thumbnail_size_h', 100 );
@@ -118,21 +117,17 @@
 // POST TYPES, METABOXES, TAXONOMIES AND CUSTOM PAGES ////////////////////////////////
 
 
-
 	require_once('inc/post-types.php');
-
 
 	require_once('inc/metaboxes.php');
 
-
 	require_once('inc/taxonomies.php');
 
-
 	require_once('inc/pages.php');
-	
-	
+
 	require_once('inc/users.php');
 
+	require_once('inc/demo.php');
 
 
 // MODIFICAR EL MAIN QUERY ///////////////////////////////////////////////////////////
