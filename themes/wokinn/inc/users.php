@@ -36,7 +36,7 @@
 
 
 	add_action('init', function(){
-		$users = array('alex', 'cova', 'clau', 'juan', 'nori', 'pam', 'york');
+		$users = array('miguel', 'alejandro', 'raul', 'antonio');
 		array_map('create_usuario_maquilador', $users);
 	});
 
@@ -47,7 +47,7 @@
 	 */
 	function create_usuario_maquilador($user){
 		$password = wp_generate_password();
-		$user_id  = wp_create_user( $user, $password, "$user@losmaquiladores.com" );
+		$user_id  = wp_create_user( $user, $password, "$user@pcuervo.com" );
 		if ( is_int($user_id) ){
 			set_maquilador_role( $user_id );
 			wp_new_user_notification( $user_id, $password );
