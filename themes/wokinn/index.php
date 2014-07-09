@@ -70,11 +70,12 @@
 								$fotoPlatillo = rwmb_meta( 'menu_foto'.$i, $fotoArgs ); ?>
 
 								<li class="clearfix">
-									<p class="columna xmall-8"><?php echo $nombrePlatillo; ?></p>
-									<p class="columna xmall-4 text-right">$<?php echo $precioPlatillo; ?></p>
-									<span><?php echo $descripcionPlatillo; ?></span>
-								</li>
+									<?php if ( $nombrePlatillo != NULL ){ ?> <p class="columna xmall-8"><?php echo $nombrePlatillo; ?></p><?php } ?>
+									<?php if ( $precioPlatillo != NULL ){ ?> <p class="columna xmall-4 text-right"><?php echo '$'.$precioPlatillo; ?></p><?php } ?>
+									<div class="clear"></div>
+									<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
 
+								</li>
 								<?php
 							}
 						?>
