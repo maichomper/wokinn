@@ -3,25 +3,21 @@
 
 // CUSTOM METABOXES //////////////////////////////////////////////////////////////////
 
-
-
 	add_action('add_meta_boxes', function(){
-		
+
 		$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
 
 		// add_meta_box( id, title, name_meta_callback, post_type, context, priority );
-		add_meta_box( 'menu', 'Menú', 'metabox_menu', 'menu', 'normal', 'default' );
 
 		//Contacto
 		$contacto = get_page_by_title( 'contacto' );
 		$contactoId = $contacto->ID;
 
 		if ( $post_id == $contactoId ){
-			add_meta_box( 'contacto', 'Detalles', 'metabox_contacto', 'page', 'normal', 'default' );
+			add_meta_box( 'contacto', 'Contacto', 'metabox_contacto', 'page', 'normal', 'default' );
 		}
 
 	});
-
 
 
 // CUSTOM METABOXES CALLBACK FUNCTIONS ///////////////////////////////////////////////
@@ -70,15 +66,15 @@ END;
 	add_action('save_post', function($post_id){
 
 
-		if ( ! current_user_can('edit_page', $post_id)) 
+		if ( ! current_user_can('edit_page', $post_id))
 			return $post_id;
 
 
-		if ( defined('DOING_AUTOSAVE') and DOING_AUTOSAVE ) 
+		if ( defined('DOING_AUTOSAVE') and DOING_AUTOSAVE )
 			return $post_id;
-		
-		
-		if ( wp_is_post_revision($post_id) OR wp_is_post_autosave($post_id) ) 
+
+
+		if ( wp_is_post_revision($post_id) OR wp_is_post_autosave($post_id) )
 			return $post_id;
 
 

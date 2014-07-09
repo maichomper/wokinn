@@ -26,9 +26,9 @@
 			        }
 				endwhile; endif;  wp_reset_query();?>
 
-    			<!-- <img src="<?php echo THEMEPATH; ?>images/slider.jpg" /> 
-    			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" /> 
-    			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" /> 
+    			<!-- <img src="<?php echo THEMEPATH; ?>images/slider.jpg" />
+    			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" />
+    			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" />
     			<img src="<?php echo THEMEPATH; ?>images/slider.jpg" />  -->
    			<div class="cycle-controls cycle-prev">
    				<i class="fa fa-chevron-left"></i>
@@ -57,166 +57,34 @@
 					<h3><?php the_title(); ?></h3>
 					<span class="block"><?php the_content(); ?></span>
 					<ul>
-						<li class="clearfix">
-							<p class="columna xmall-8">Gyozas pollo</p>
-							<p class="columna xmall-4 text-right">$45.00</p>
-						</li>
-						<li class="clearfix">
-							<p class="columna xmall-8">Gyozas carne</p>
-							<p class="columna xmall-4 text-right">$45.00</p>
-						</li>
-						<li class="clearfix">
-							<p class="columna xmall-8">Gyozas verduras</p>
-							<p class="columna xmall-4 text-right">$45.00</p>
-							<span>¡Pídelos para tu sopa!</span>
-						</li>
-						<li class="clearfix">
-							<p class="columna xmall-8">Rangoons de queso crema</p>
-							<p class="columna xmall-4 text-right">$45.00</p>
-						</li>
+						<?php
+
+							for ($i = 1; $i <= 25; $i++) {
+								$nombrePlatillo = rwmb_meta( 'menu_nombre'.$i );
+								$precioPlatillo = rwmb_meta( 'menu_precio'.$i );
+								$descripcionPlatillo = rwmb_meta( 'menu_descripcion'.$i );
+								$fotoArgs = array(
+									'type' 	=> 'image',
+									'size' 	=> 'full'
+								);
+								$fotoPlatillo = rwmb_meta( 'menu_foto'.$i, $fotoArgs ); ?>
+
+								<li class="clearfix">
+									<p class="columna xmall-8"><?php echo $nombrePlatillo; ?></p>
+									<p class="columna xmall-4 text-right">$<?php echo $precioPlatillo; ?></p>
+									<span><?php echo $descripcionPlatillo; ?></span>
+								</li>
+
+								<?php
+							}
+						?>
+
 					</ul>
 				</article>
-			<?php		
+			<?php
 				endwhile; endif;  wp_reset_query();
 			?>
 
-			<article class="categoria columna xmall-12 medium-4 clearfix">
-				<img src="<?php echo THEMEPATH; ?>images/dumplings.jpg" />
-				<h3>Gyozas / Rangoons / Dumplings</h3>
-				<span class="block">Empanadas orientales fritas o al vapor</span>
-				<ul>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas pollo</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-					</li>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas carne</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-					</li>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas verduras</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span>¡Pídelos para tu sopa!</span>
-					</li>
-					<li class="clearfix">
-						<p class="columna xmall-8">Rangoons de queso crema</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-					</li>
-				</ul>
-			</article>
-
-			<article class="categoria columna xmall-12 medium-4 clearfix">
-				<img src="<?php echo THEMEPATH; ?>images/kiuss.jpg" />
-				<h3>Kiuss / Onigiris</h3>
-				<span class="block">Acompañados de salsas dulce y chipotle</span>
-				<ul>
-					<li>
-						<p class="columna xmall-8">Kiuss queso crema</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span>Esferas de arroz empaniadas</span>
-					</li>
-					<li>
-						<p class="columna xmall-8">Kiuss manchego aceituna</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span></span>
-					</li>
-				</ul>
-				<span></span>
-			</article>
-
-			<article class="categoria columna xmall-12 medium-4 clearfix">
-				<img src="<?php echo THEMEPATH; ?>images/dumplings.jpg" />
-				<h3>Gyozas / Rangoons / Dumplings</h3>
-				<span class="block">Empanadas orientales fritas o al vapor</span>
-				<ul>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas pollo</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-					</li>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas carne</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-					</li>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas verduras</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span>¡Pídelos para tu sopa!</span>
-					</li>
-					<li class="clearfix">
-						
-						<!--PRUEBA DE TOOLTIP-->
-
-						
-    					<div id="content">
-    
-						</div>
-
-						<p class="columna xmall-8">Rangoons de queso crema</p>
-						<p class="columna xmall-4 text-right">$45.00</p>		
-					</li>
-				</ul>
-			</article>
-			
-			<article class="categoria columna xmall-12 medium-4 clearfix">
-				<img src="<?php echo THEMEPATH; ?>images/kiuss.jpg" />
-				<h3>Kiuss / Onigiris</h3>
-				<span class="block">Acompañados de salsas dulce y chipotle</span>
-				<ul>
-					<li>
-						<p class="columna xmall-8">Kiuss queso crema</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span>Esferas de arroz empaniadas</span>
-					</li>
-					<li>
-						<p class="columna xmall-8">Kiuss manchego aceituna</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span></span>
-					</li>
-				</ul>
-				<span></span>
-			</article>
-			<article class="categoria columna xmall-12 medium-4 clearfix">
-				<img src="<?php echo THEMEPATH; ?>images/dumplings.jpg" />
-				<h3>Gyozas / Rangoons / Dumplings</h3>
-				<span class="block">Empanadas orientales fritas o al vapor</span>
-				<ul>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas pollo</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-					</li>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas carne</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-					</li>
-					<li class="clearfix">
-						<p class="columna xmall-8">Gyozas verduras</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span>¡Pídelos para tu sopa!</span>
-					</li>
-					<li class="clearfix">
-						<p class="columna xmall-8">Rangoons de queso crema</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-					</li>
-				</ul>
-			</article>
-			<article class="categoria columna xmall-12 medium-4 clearfix">
-				<img src="<?php echo THEMEPATH; ?>images/kiuss.jpg" />
-				<h3>Kiuss / Onigiris</h3>
-				<span class="block">Acompañados de salsas dulce y chipotle</span>
-				<ul>
-					<li>
-						<p class="columna xmall-8">Kiuss queso crema</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span>Esferas de arroz empaniadas</span>
-					</li>
-					<li>
-						<p class="columna xmall-8">Kiuss manchego aceituna</p>
-						<p class="columna xmall-4 text-right">$45.00</p>
-						<span></span>
-					</li>
-				</ul>
-				<span></span>
-			</article>
 		</section>
 
 
