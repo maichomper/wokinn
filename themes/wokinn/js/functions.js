@@ -31,10 +31,24 @@
 		});
 
 		//TOOLTIP
-		/*$("#content").html('<a id="riverroad" href="#" title="" >image of 1 Maple St.</a>');
-  	 	$("#content #riverroad").tooltip({ content: '<img src="http://icdn.pro/images/fr/a/v/avatar-barbe-brun-homme-utilisateur-icone-9665-128.png" />' }); */
-	
- 	
+		$('.hasTooltip').each(function() {
+			$(this).qtip({
+				content: {
+					text: $(this).next('div')
+				},
+				position: {
+			        viewport: $(window),
+			        my: 'bottom center',
+			        at: 'center',
+			        target: $(this).find('.nombre'),
+			    },
+			    events: {
+					render: function(event, api) {
+						var elem = api.elements.tip;
+					}
+				}
+			});
+		});
 
 		///////////////////////////////////
 		/////////// FUNCIONES /////////////
@@ -45,7 +59,6 @@
 		toggleMenuMovil();
 
 		creaMapa();
-
 
 		function isotope(){
 			var $container = $('.grid').imagesLoaded( function() {
@@ -75,7 +88,7 @@
 		/////////// RESPONSIVE /////////////
 		///////////////////////////////////
 
-		
+
 
 	});
 
