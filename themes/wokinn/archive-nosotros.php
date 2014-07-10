@@ -20,10 +20,10 @@
 	?>
 		<section class="clearfix columna xmall-12 medium-6">
 			<?php the_post_thumbnail( "medium" ); ?>
-			<h3><?php the_title(); ?></h3>			
-			<p><?php the_content(); ?></p>	
+			<h3><?php the_title(); ?></h3>
+			<p><?php the_content(); ?></p>
 		</section>
-	<?php		
+	<?php
 		endwhile; endif;  wp_reset_query();
 	?>
 
@@ -36,33 +36,25 @@
 	<section class="galeria clearfix columna xmall-12">
 
 	<?php
-		$galeriaArgs = array(
-			'post_type' 		=> 'nosotros',
-			'category_name'		=> 'galeria',
-			'posts_per_page'	=> -1
-		);
-		$galeriaQuery = new WP_Query($galeriaArgs);
+		$galeria = get_page_by_title( 'galeria' );
+		$galeriaID = $galeria->ID;
 
-		if( $galeriaQuery->have_posts() ) : while( $galeriaQuery->have_posts() ) : $galeriaQuery->the_post();
+		$attachmentsArgs = array(
+            'post_type' => 'attachment',
+            'posts_per_page' => -1,
+            'post_parent' => $galeriaID
+        );
+        $attachments = get_posts($attachmentsArgs);
 
-			$attachmentsArgs = array(
-	            'post_type' => 'attachment',
-	            'posts_per_page' => -1,
-	            'post_parent' => $post->ID
-	        );
-	        $attachments = get_posts($attachmentsArgs);
+        if ( $attachments ) {
+            foreach ( $attachments as $attachment ) {
+            	$fullUrl = wp_get_attachment_image_src($attachment->ID, 'full');
+            	$thumbUrl = wp_get_attachment_image_src($attachment->ID, 'thumbnail');
+            	$alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true); ?>
+            	<a class="fancybox columna xmall-6 medium-3 margin-bottom" rel="group" href="<?php echo $fullUrl[0]; ?>"><img src="<?php echo $thumbUrl[0]; ?>" alt="<?php echo $alt; ?>" /></a>
 
-	        if ( $attachments ) {
-	            foreach ( $attachments as $attachment ) {
-	            	$imgUrl = wp_get_attachment_image_src($attachment->ID, 'full');
-	?>
-	            	<a class="columna xmall-6 medium-3 margin-bottom" href="#">
-						<img src="<?php $imgUrl[0]; ?>" alt="">
-					</a>
-	<?php
-	            }
-	        }	
-		endwhile; endif;  wp_reset_query();
+			<?php }
+        }
 	?>
 	</section>
 
@@ -88,7 +80,7 @@
 			<p><?php the_title(); ?></p>
 		</a>
 
-	<?php		
+	<?php
 		endwhile; endif;  wp_reset_query();
 	?>
 	</section>
