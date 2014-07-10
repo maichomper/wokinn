@@ -8,24 +8,26 @@
 		<span class="center">Nuestra Cocina</span>
 	</h3>
 
-	<?php
-		$cocinaArgs = array(
-			'post_type' 		=> 'nosotros',
-			'category_name'			=> 'cocina',
-			'posts_per_page'	=> -1
-		);
-		$cocinaQuery = new WP_Query($cocinaArgs);
+	<section class="nuestra-cocina grid width clearfix">
+		<?php
+			$cocinaArgs = array(
+				'post_type' 		=> 'nosotros',
+				'category_name'			=> 'cocina',
+				'posts_per_page'	=> -1
+			);
+			$cocinaQuery = new WP_Query($cocinaArgs);
 
-		if( $cocinaQuery->have_posts() ) : while( $cocinaQuery->have_posts() ) : $cocinaQuery->the_post();
-	?>
-		<section class="clearfix columna xmall-12 medium-6">
-			<?php the_post_thumbnail( "medium" ); ?>
-			<h3><?php the_title(); ?></h3>
-			<p><?php the_content(); ?></p>
-		</section>
-	<?php
-		endwhile; endif;  wp_reset_query();
-	?>
+			if( $cocinaQuery->have_posts() ) : while( $cocinaQuery->have_posts() ) : $cocinaQuery->the_post();
+		?>
+			<article class="clearfix columna xmall-12 medium-6">
+				<?php the_post_thumbnail( "medium" ); ?>
+				<h3><?php the_title(); ?></h3>
+				<p><?php the_content(); ?></p>
+			</article>
+		<?php
+			endwhile; endif;  wp_reset_query();
+		?>
+	</section>
 
 	<div class="clear"></div>
 
