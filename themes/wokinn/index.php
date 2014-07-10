@@ -65,19 +65,22 @@
 									'type' 	=> 'image',
 									'size' 	=> 'full'
 								);
-								$fotoPlatillo = rwmb_meta( 'menu_foto'.$i, $fotoArgs ); ?>
+								$fotosPlatillo = rwmb_meta( 'menu_foto'.$i, $fotoArgs ); ?>
 
 								<?php if ( $nombrePlatillo != NULL ){ ?>
-									<li class="clearfix hasTooltip">
+									<li class="clearfix <?php if ( !empty($fotosPlatillo) ) { echo 'hasTooltip'; }?>">
 										<p class="columna xmall-8 nombre"><?php echo $nombrePlatillo; ?></p>
 										<?php if ( $precioPlatillo != NULL ){ ?> <p class="columna xmall-4 text-right"><?php echo '$'.$precioPlatillo; ?></p><?php } ?>
 										<div class="clear"></div>
 										<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
 									</li>
+									<?php if ( !empty($fotosPlatillo) ) {?>
 									<div class="hide">
-										<img src="<?php echo THEMEPATH; ?>images/estufa.jpg" alt="">
+										<?php foreach ( $fotosPlatillo as $fotoPlatillo ){
+										    echo "<img src='{$fotoPlatillo['url']}' />";
+										} ?>
 									</div>
-								<?php }
+								<?php } }
 							}
 						?>
 
@@ -131,7 +134,13 @@
 										<div class="clear"></div>
 										<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
 									</li>
-								<?php }
+								<?php if ( !empty($fotosPlatillo) ) {?>
+									<div class="hide">
+										<?php foreach ( $fotosPlatillo as $fotoPlatillo ){
+										    echo "<img src='{$fotoPlatillo['url']}' />";
+										} ?>
+									</div>
+								<?php } }
 							}
 						?>
 
@@ -185,7 +194,13 @@
 										<div class="clear"></div>
 										<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
 									</li>
-								<?php }
+								<?php if ( !empty($fotosPlatillo) ) {?>
+									<div class="hide">
+										<?php foreach ( $fotosPlatillo as $fotoPlatillo ){
+										    echo "<img src='{$fotoPlatillo['url']}' />";
+										} ?>
+									</div>
+								<?php } }
 							}
 						?>
 
@@ -233,16 +248,19 @@
 								$fotoPlatillo = rwmb_meta( 'menu_foto'.$i, $fotoArgs ); ?>
 
 								<?php if ( $nombrePlatillo != NULL ){ ?>
-									<li class="clearfix hasTooltip">
+									<li class="clearfix">
 										<p class="columna xmall-8"><?php echo $nombrePlatillo; ?></p>
 										<?php if ( $precioPlatillo != NULL ){ ?> <p class="columna xmall-4 text-right"><?php echo '$'.$precioPlatillo; ?></p><?php } ?>
 										<div class="clear"></div>
 										<?php if ( $descripcionPlatillo != NULL ){ ?> <span><?php echo $descripcionPlatillo; ?></span><?php } ?>
 									</li>
+								<?php if ( !empty($fotosPlatillo) ) {?>
 									<div class="hide">
-										<p><b><?php echo $nombrePlatillo; ?></b> for your tooltip <i>here</i>!</p>
+										<?php foreach ( $fotosPlatillo as $fotoPlatillo ){
+										    echo "<img src='{$fotoPlatillo['url']}' />";
+										} ?>
 									</div>
-								<?php }
+								<?php } }
 							}
 						?>
 
