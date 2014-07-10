@@ -71,10 +71,29 @@
 		if(seccionActual == 'contacto')
 			creaMapa();
 
+
+		if ( $('.grid').length > 0 ){
+			console.log(seccionActual);
+			if (seccionActual == 'nosotros')
+				isotopeA();
+
+			isotope();
+
+		}
+
 		function isotope(){
 			var $container = $('.grid').imagesLoaded( function() {
 				$container.isotope({
 				  itemSelector: 'article',
+				  layoutMode: 'masonry'
+				});
+			});
+		}
+
+		function isotopeA(){
+			var $container = $('.grid').imagesLoaded( function() {
+				$container.isotope({
+				  itemSelector: 'a',
 				  layoutMode: 'masonry'
 				});
 			});
@@ -85,13 +104,10 @@
 			//console.log($(forma));
 		}
 
-
 		///////////////////////////////////
 		/////////// DESKTOP /////////////
 		///////////////////////////////////
-		if ( $('.grid').length > 0 ){
-			isotope();
-		}
+
 
 		validacion('.forma-contacto');
 

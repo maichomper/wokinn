@@ -66,7 +66,7 @@
 		<span class="center">Familia Extendida</span>
 	</h3>
 
-	<section class="familia-extendida clearfix columna xmall-12">
+	<section class="familia-extendida grid clearfix columna xmall-12">
 	<?php
 		$familiaArgs = array(
 			'post_type' 		=> 'nosotros',
@@ -87,5 +87,4 @@
 	?>
 	</section>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

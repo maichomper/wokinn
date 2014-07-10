@@ -35,7 +35,9 @@
 		$seccionActual = '';
 		if(get_the_title($post->ID)=='Contacto') {
 			$seccionActual = 'contacto';
-		} 
+		} else if( get_post_type($post->ID) == 'nosotros') {
+			$seccionActual = 'nosotros';
+		}
 		wp_localize_script('functions', 'seccionActual', $seccionActual);
 
 	});
