@@ -4,6 +4,7 @@
 
 	$(function(){
 
+
 		// Controla js en .medium
 		mediaCheck({
 		    media: '(min-width: 40.063em)',
@@ -58,7 +59,8 @@
 		mostrarMenu();
 		toggleMenuMovil();
 
-		creaMapa();
+		if(seccionActual == 'contacto')
+			creaMapa();
 
 		function isotope(){
 			var $container = $('.grid').imagesLoaded( function() {
