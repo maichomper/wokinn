@@ -20,6 +20,7 @@
 
 
 	add_action( 'wp_enqueue_scripts', function(){
+		global $post;
 
 		// scripts
 		wp_enqueue_script( 'plugins', JSPATH.'plugins.js', array('jquery'), '1.0', true );
@@ -30,6 +31,12 @@
 
 		// styles
 		wp_enqueue_style( 'styles', get_stylesheet_uri() );
+
+		$seccionActual = '';
+		if(get_the_title($post->ID)=='Contacto') {
+			$seccionActual = 'contacto';
+		} 
+		wp_localize_script('functions', 'seccionActual', $seccionActual);
 
 	});
 
