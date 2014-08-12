@@ -1,5 +1,4 @@
 <?php
-	get_header();
 
 	$nombre = $email = $mensaje = '';
 
@@ -7,8 +6,7 @@
 	$email 		= ( isset($_POST['email']) ) ? $_POST['email'] : '';
 	$mensaje 	= ( isset($_POST['mensaje']) ) ? $_POST['mensaje'] : '';
 
-	$mail_to = 'raul@pcuervo.com';
-	//$mail_to = 'info@wokkinn.com.mx';
+	$mail_to = 'info@wokkinn.com.mx';
 	$subject = 'Contacto Wok Inn '.$nombre;
 
 	$body_message = 'Nombre: '.$nombre."\n";
@@ -19,6 +17,8 @@
 	$headers .= 'Reply-To: '.$email."\r\n";
 
 	$mail_status = mail($mail_to, $subject, $body_message, $headers);
+
+	get_header();
 ?>
 
 	<section class="contacto width clearfix">

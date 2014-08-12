@@ -1,5 +1,4 @@
 <?php
-	get_header();
 
 	$nombre = $direccion = $email = $telefono = $numero = $platillos = '';
 
@@ -9,9 +8,8 @@
 	$telefono 	= ( isset($_POST['telefono']) ) ? $_POST['telefono'] : '';
 	$numero 	= ( isset($_POST['numero']) ) ? $_POST['numero'] : '';
 	$platillos 	= ( isset($_POST['platillos']) ) ? $_POST['platillos'] : '';
-
-	$mail_to = 'raul@pcuervo.com';
-	//$mail_to = 'eventos@wokinn.com.mx';
+	
+	$mail_to = 'eventos@wokinn.com.mx';
 	$subject = 'Evento Wok Inn '.$nombre;
 
 	$body_message = 'Nombre: '.$nombre."\n";
@@ -25,6 +23,8 @@
 	$headers .= 'Reply-To: '.$email."\r\n";
 
 	$mail_status = mail($mail_to, $subject, $body_message, $headers);
+
+	get_header();
 ?>
 
 	<section class="contacto width clearfix">
