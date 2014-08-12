@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <!-- Insert content here -->
 
-		<section class="slider full">
-			<div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-swipe="true">
+		<section class="slider full no-xmall no-small medium">
+			<div class="cycle-slideshow no-xmall medium" data-cycle-fx="scrollHorz" data-cycle-swipe="true">
 				<?php
 				$sliderArgs = array(
 					'post_type' 	=> 'slider'
@@ -34,11 +34,23 @@
    			</div>
 		</section>
 
+		<div class="width clearfix center block columna xmall-12 sub-menu">
+			<a href="#menu" class="block text-center columna xmall-3 ">Menú</a>
+
+			<a href="#woks" class="block text-center columna xmall-3 ">Woks</a>
+
+			<a href="#combos" class="block text-center columna xmall-3 ">Combos</a>
+
+			
+			<a href="#bebidas" class="block text-center columna xmall-3 ">Bebidas</a>
+			
+		</div>
+
 		<h2 class="block text-center">
 			<span class="center">Menú</span>
 		</h2>
 
-		<section class="menu grid width clearfix">
+		<section id="menu" class="menu grid width clearfix">
 			<?php
 				$menuArgs = array(
 					'post_type' 		=> 'menu',
@@ -50,11 +62,11 @@
 
 				if( $menuQuery->have_posts() ) : while( $menuQuery->have_posts() ) : $menuQuery->the_post();
 			?>
-				<article class="categoria columna xmall-12 medium-4 clearfix">
+				<article  class="categoria columna xmall-12 medium-4 clearfix">
 					<?php the_post_thumbnail( "medium" ); ?>
 					<h3><?php the_title(); ?></h3>
 					<span class="block"><?php the_content(); ?></span>
-					<ul>
+					<ul class="no-xmall medium">
 						<?php
 
 							for ($i = 1; $i <= 25; $i++) {
@@ -86,6 +98,7 @@
 
 					</ul>
 				</article>
+				<div class="clear"></div>
 			<?php
 				endwhile; endif;  wp_reset_query();
 			?>
@@ -98,7 +111,7 @@
 			<span class="center">Woks</span>
 		</h2>
 
-		<section class="menu grid width clearfix">
+		<section id="woks" class="menu grid width clearfix">
 			<?php
 				$menuArgs = array(
 					'post_type' 		=> 'menu',
@@ -110,7 +123,7 @@
 
 				if( $menuQuery->have_posts() ) : while( $menuQuery->have_posts() ) : $menuQuery->the_post();
 			?>
-				<article class="categoria columna xmall-12 medium-4 clearfix">
+				<article  class="categoria columna xmall-12 medium-4 clearfix">
 					<?php the_post_thumbnail( "medium" ); ?>
 					<h3><?php the_title(); ?></h3>
 					<span class="block"><?php the_content(); ?></span>
@@ -158,7 +171,7 @@
 			<span class="center">Combos</span>
 		</h2>
 
-		<section class="menu grid width clearfix">
+		<section id="combos" class="menu grid width clearfix">
 			<?php
 				$menuArgs = array(
 					'post_type' 		=> 'menu',
@@ -170,7 +183,7 @@
 
 				if( $menuQuery->have_posts() ) : while( $menuQuery->have_posts() ) : $menuQuery->the_post();
 			?>
-				<article class="categoria columna xmall-12 medium-3 clearfix">
+				<article  class="categoria columna xmall-12 medium-3 clearfix">
 					<?php the_post_thumbnail( "medium" ); ?>
 					<h3><?php the_title(); ?></h3>
 					<span class="block"><?php the_content(); ?></span>
@@ -218,7 +231,7 @@
 			<span class="center">Bebidas</span>
 		</h2>
 
-		<section class="menu grid width clearfix">
+		<section id="bebidas" class="menu grid width clearfix">
 			<?php
 				$menuArgs = array(
 					'post_type' 		=> 'menu',
@@ -230,7 +243,7 @@
 
 				if( $menuQuery->have_posts() ) : while( $menuQuery->have_posts() ) : $menuQuery->the_post();
 			?>
-				<article class="categoria columna xmall-12 medium-4 clearfix">
+				<article  class="categoria columna xmall-12 medium-4 clearfix">
 					<?php the_post_thumbnail( "medium" ); ?>
 					<h3><?php the_title(); ?></h3>
 					<span class="block"><?php the_content(); ?></span>

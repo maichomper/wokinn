@@ -31,34 +31,7 @@
 
 	<div class="clear"></div>
 
-	<h3 class="block ">
-		<span class="center">Galería</span>
-	</h3>
-
-	<section class="galeria clearfix columna xmall-12">
-
-	<?php
-		$galeria = get_page_by_title( 'galeria' );
-		$galeriaID = $galeria->ID;
-
-		$attachmentsArgs = array(
-            'post_type' => 'attachment',
-            'posts_per_page' => -1,
-            'post_parent' => $galeriaID
-        );
-        $attachments = get_posts($attachmentsArgs);
-
-        if ( $attachments ) {
-            foreach ( $attachments as $attachment ) {
-            	$fullUrl = wp_get_attachment_image_src($attachment->ID, 'full');
-            	$thumbUrl = wp_get_attachment_image_src($attachment->ID, 'thumbnail');
-            	$alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true); ?>
-            	<a class="fancybox columna xmall-6 medium-3 margin-bottom" rel="group" href="<?php echo $fullUrl[0]; ?>"><img src="<?php echo $thumbUrl[0]; ?>" alt="<?php echo $alt; ?>" /></a>
-
-			<?php }
-        }
-	?>
-	</section>
+	
 
 	<div class="clear"></div>
 

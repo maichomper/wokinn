@@ -25,6 +25,7 @@
 		    	entry: function() {
 		    		$('header > div > div').css('height', '100px');
 		      		console.log('enter small');
+		      		togglePlatillosMovil();
 	    		},
 		    	exit: function() {
 		    		console.log('exit medium');
@@ -65,7 +66,7 @@
 		///////////////////////////////////
 
 		// Menú móvil
-		mostrarMenu();
+		//mostrarMenu();
 		toggleMenuMovil();
 
 		if(seccionActual == 'contacto')
@@ -121,7 +122,7 @@
 
 	function alturaHeader(isSet){
 		var alturaH1 = $('h1').height();
-		$('header > div > div').height(alturaH1);
+		$('header > div > .bloque-datos').height(alturaH1);
 	}
 	function mostrarMenu() {
 		$(window).resize(function(){
@@ -174,6 +175,14 @@
 		}
 
 		google.maps.event.addDomListener(window, 'load', initialize);
+	}
+
+	function togglePlatillosMovil(){
+		$('.categoria h3').on('click', function(){
+			$(this).parent().find('ul').removeClass('no-xmall');
+			$(this).parent().find('ul').addClass('block');
+
+		});
 	}
 
 })(jQuery);

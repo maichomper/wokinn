@@ -268,7 +268,7 @@ figure {margin: 0;}
 
 //elementos
 h1 {  }
-h2 { margin:0 0 @margen*2 0; .font(4em, 1.5em, 'canter'); text-align: center;
+h2 { margin:0 0 @margen*2 0; .font(2em, 1.5em, 'canter'); text-align: center;
 	span{ padding: @margen/2 @margen; color: @claro; background: @highlight; }
 }
 h3 { margin:0; .font(2em, 1em, 'canter'); color:@highlight; text-transform: uppercase; }
@@ -317,7 +317,7 @@ header { padding:@margen*2 0;
 	}
 	#btn-movil { position: absolute; top:@margen/2; right: @margen*2; z-index: 2;
 		a { font-size: 3em; color: @highlight;
-			&:hover { color: @claro; }
+			&:hover { color: darken(@highlight,15%); }
 		}
 	}
 }
@@ -332,7 +332,7 @@ header { padding:@margen*2 0;
 
 /*** MAIN ***/
 
-.slider { width: 100%; margin-bottom: @margen; position: relative;
+.slider { width: 100%; margin-bottom: @margen*4; position: relative;
 	> div{  }
 	img{ width: 100%; height: auto; }
 	.cycle-controls{ display: block; width: (@margen*2); color: @highlight; background: rgba(255, 255, 255, 0.7); position: absolute; top: 45%; cursor: pointer; z-index: 999999;
@@ -342,15 +342,28 @@ header { padding:@margen*2 0;
 	i{ width: 100%; text-align: center; font-size: 1.3em; line-height: 2em; }
 }
 
+.sub-menu{ margin-bottom:@margen*4;
+	a{ width:45%; border: solid 2px @highlight; padding: @margen/1.5; color: @obscuro; .transition; text-decoration: none;
+			&:hover{background: @highlight; color: @claro; }
+	}
+	.font(2em, 1.5em, 'canter');
+}
+
 .categoria {
+	h3{.font (2.5em, 1.2em, 'canter');}
 	span { margin:0 0 @margen 0; .font(1em, 1em); color:@secundario; }
 	ul { width: 100%; margin:0; list-style-type: none;
 		li { margin-bottom: (@margen/2); color: @obscuro;
 			.nombre{ cursor: pointer; }
-			p { margin:0; .font(1.1em, 1em); }
-			span { .font(0.8em, 0.6em) }
+			p { margin:0; .font(1.1em, 1.5em); }
+			span { .font(0.8em, 0.4em) }
 		}
 	}
+}
+
+.pedidos{ padding-top: 1%;
+	.font(.5em, 1em);
+	p{.no-margin;}
 }
 
 /*** FAMILIA EXTENDIDA ***/
@@ -378,180 +391,15 @@ header { padding:@margen*2 0;
 
 }
 
-/*
- * qTip2 - Pretty powerful tooltips - v2.2.0
- * http://qtip2.com
- *
- * Copyright (c) 2014 Craig Michael Thompson
- * Released under the MIT, GPL licenses
- * http://jquery.org/license
- *
- * Date: Mon Mar 17 2014 08:50 EDT-0400
- * Plugins: viewport
- * Styles: css3
- */
-.qtip{
-	position: absolute;
-	left: -28000px;
-	top: -28000px;
-	display: none;
 
-	max-width: 280px;
-	min-width: 50px;
+/**Q-tip**/
 
-	font-size: 10.5px;
-	line-height: 12px;
-
-	direction: ltr;
-
-	box-shadow: none;
-	padding: 0;
-}
-
-.qtip-content{
-	position: relative;
-	padding: (@margen/2);
-	overflow: hidden;
-
-	text-align: left;
-	word-wrap: break-word;
-
-	img{ width: 100%; height: auto; }
-
-}
-
-.qtip-titlebar{
-	position: relative;
-	padding: 5px 35px 5px 10px;
-	overflow: hidden;
-
-	border-width: 0 0 1px;
-	font-weight: bold;
-}
-
-.qtip-titlebar + .qtip-content{ border-top-width: 0 !important; }
-
-/* Default close button class */
-.qtip-close{
-	position: absolute;
-	right: -9px; top: -9px;
-
-	cursor: pointer;
-	outline: medium none;
-
-	border-width: 1px;
-	border-style: solid;
-	border-color: transparent;
-}
-
-.qtip-titlebar .qtip-close{
-	right: 4px; top: 50%;
-	margin-top: -9px;
-}
-
-* html .qtip-titlebar .qtip-close{ top: 16px; } /* IE fix */
-
-.qtip-titlebar .ui-icon,
-.qtip-icon .ui-icon{
-	display: block;
-	text-indent: -1000em;
-	direction: ltr;
-}
-
-.qtip-icon, .qtip-icon .ui-icon{
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	text-decoration: none;
-}
-
-.qtip-icon .ui-icon{
-	width: 18px;
-	height: 14px;
-
-	line-height: 14px;
-	text-align: center;
-	text-indent: 0;
-	font: normal bold 10px/13px Tahoma,sans-serif;
-
-	color: inherit;
-	background: transparent none no-repeat -100em -100em;
-}
-
-/* Applied to 'focused' tooltips e.g. most recently displayed/interacted with */
-.qtip-focus{}
-
-/* Applied on hover of tooltips i.e. added/removed on mouseenter/mouseleave respectively */
-.qtip-hover{}
-
-/* Default tooltip style */
-.qtip-default{
-	border-width: 1px;
-	border-style: solid;
-	border-color: darken(@highlight, 10%);
-
-	background-color: @highlight;
-}
-
-.qtip-default .qtip-titlebar{
-	background-color: #FFEF93;
-}
-
-.qtip-default .qtip-icon{
-	border-color: #CCC;
-	background: #F1F1F1;
-	color: #777;
-}
-
-.qtip-default .qtip-titlebar .qtip-close{
-	border-color: #AAA;
-	color: #111;
-}
-
-
-.qtip-shadow{
-	-webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
-	-moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
-	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
-}
-
-/* IE9 fix - removes all filters */
-.qtip:not(.ie9haxors) div.qtip-content,
-.qtip:not(.ie9haxors) div.qtip-titlebar{
-	filter: none;
-	-ms-filter: none;
-}
-
-.qtip .qtip-tip{
-	margin: 0 auto;
-	overflow: hidden;
-	z-index: 10;
-
-}
-
-/* Opera bug #357 - Incorrect tip position
-https://github.com/Craga89/qTip2/issues/367 */
-x:-o-prefocus, .qtip .qtip-tip{
+ #qtip-0, #qtip-1, #qtip-2{
+	
 	visibility: hidden;
 }
 
-.qtip .qtip-tip,
-.qtip .qtip-tip .qtip-vml,
-.qtip .qtip-tip canvas{
-	position: absolute;
 
-	color: #123456;
-	background: transparent;
-	border: 0 dashed transparent;
-}
-
-.qtip .qtip-tip canvas{ top: 0; left: 0; }
-
-.qtip .qtip-tip .qtip-vml{
-	behavior: url(#default#VML);
-	display: inline-block;
-	visibility: visible;
-}
 
 /*::::::::::::::::::::::::::: FANCYBOX :::::::::::::::::::: */
 
@@ -914,30 +762,43 @@ x:-o-prefocus, .qtip .qtip-tip{
 	.medium{ display: block !important; }
 	.no-medium{ display: none; }
 	.no-center-medium { margin:0 1%; float:left !important; }
+	.medium-right{float:right !important;}
 
 	h3 { .font(3em, 1em, 'canter'); }
 
+
+
 	//========================//
 
-	header {
-		> div > div{ position: relative; }
-		h1 { margin: 0; }
-		p { .font(1em, 1em, 'bitter-regular'); text-align: left; }
-
-		nav { position: absolute; bottom: 0; top:auto; padding:@margen/4; border-top:2px solid @obscuro; border-bottom: 2px solid @obscuro;
-			a { width:20%; .font(1.4em, 1em, 'canter'); color: @highlight; text-transform: uppercase; text-decoration: none; background: none;
-				&.active{ background: @highlight; color:@claro; }
-				&:hover{ background: @highlight; color:@claro; }
+	header { padding:@margen*2 0;
+		h1 { margin:@margen 0 0 0;
+			a { margin:0 auto; }
+		}
+		p { margin-bottom: @porcentaje*3 ; .font(1.5em, 1.5em, 'bitter-regular'); text-align: center; color:@highlight; }
+		nav { position: absolute; top:10; left:0; margin:0; padding:0; float: none;
+			a { display: inline; width:20%; padding: @margen*3 @margen/2 @margen @margen/2; top: 30; .font(2.2em, 1em, 'canter'); text-align: center; color: @claro; text-transform: uppercase; text-decoration: none; background: @highlight;
+				&.active{ background: darken(@highlight, 10%); cursor :default; }
+				&:hover{ background: darken(@highlight, 10%); }
 			}
 		}
-		/*nav { padding:@margen/4; border:none; position: absolute; bottom: 0;
-			a { width:20%; .font(2.2em, 1em, 'canter'); color: @highlight; text-transform: uppercase; text-decoration: none; }
-		}*/
-		.redes{
-			> *{ margin-bottom:0; }
+		#btn-movil { position: absolute; top:@margen/4; right: @margen*2; z-index: 2;
+			a { font-size: 3em; color: @highlight;
+				&:hover { color: darken(@highlight,15%); }
+			}
 		}
 	}
+
+	.redes, .pedidos{padding-top: 1%;
+		a{}
+	}
+
+	.sub-menu{
+	h2{margin-bottom: @margen*2; 
+		a{border: solid 2px @highlight; padding: @margen @margen*1.5;}
+	}
 }
+}
+
 
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
@@ -984,12 +845,207 @@ x:-o-prefocus, .qtip .qtip-tip{
 
 	//========================//
 	header {
-		p { .font(1.5em, 1.3em, 'bitter-regular'); text-align: left; }
-		nav {
-			a { width:20%; .font(2em, 1em, 'canter');
+		> div > div{ position: relative; }
+		h1 { margin: 0; }
+		p { .font(1.8em, 2em, 'bitter-regular'); text-align: left; }
+
+		nav { position: absolute; bottom: 0; top:auto; padding:@margen/4; border-top:2px solid @obscuro; border-bottom: 2px solid @obscuro;
+			a { width:20%; padding: @margen/2; top: 0; .font(1.4em, 1em, 'canter'); color: @highlight; text-transform: uppercase; text-decoration: none; background: none;
+				&.active{ background: @highlight; color:@claro; }
+				&:hover{ background: @highlight; color:@claro; }
 			}
 		}
 	}
+
+	.redes{ .right;}
+
+	.sub-menu{
+	h2{margin-bottom: @margen*2; 
+		a{border: solid 2px @highlight; padding: @margen @margen*2;}
+	}
+}
+
+	/*
+ * qTip2 - Pretty powerful tooltips - v2.2.0
+ * http://qtip2.com
+ *
+ * Copyright (c) 2014 Craig Michael Thompson
+ * Released under the MIT, GPL licenses
+ * http://jquery.org/license
+ *
+ * Date: Mon Mar 17 2014 08:50 EDT-0400
+ * Plugins: viewport
+ * Styles: css3
+ */
+
+ #qtip-0, #qtip-1, #qtip-2{
+	
+	visibility: visible;
+}
+
+
+.qtip{
+	position: absolute;
+	left: -28000px;
+	top: -28000px;
+	display: none;
+
+	max-width: 500px;
+	min-width: 300px;
+
+	font-size: 10.5px;
+	line-height: 12px;
+
+	direction: ltr;
+
+	box-shadow: none;
+	padding: 0;
+}
+
+.qtip-content{
+	position: relative;
+	padding: (@margen/2);
+	overflow: hidden;
+
+	text-align: left;
+	word-wrap: break-word;
+
+	img{ width: 100%; height: auto; }
+
+}
+
+.qtip-titlebar{
+	position: relative;
+	padding: 5px 35px 5px 10px;
+	overflow: hidden;
+
+	border-width: 0 0 1px;
+	font-weight: bold;
+}
+
+.qtip-titlebar + .qtip-content{ border-top-width: 0 !important; }
+
+/* Default close button class */
+.qtip-close{
+	position: absolute;
+	right: -9px; top: -9px;
+
+	cursor: pointer;
+	outline: medium none;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+.qtip-titlebar .qtip-close{
+	right: 4px; top: 50%;
+	margin-top: -9px;
+}
+
+* html .qtip-titlebar .qtip-close{ top: 16px; } /* IE fix */
+
+.qtip-titlebar .ui-icon,
+.qtip-icon .ui-icon{
+	display: block;
+	text-indent: -1000em;
+	direction: ltr;
+}
+
+.qtip-icon, .qtip-icon .ui-icon{
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	text-decoration: none;
+}
+
+.qtip-icon .ui-icon{
+	width: 18px;
+	height: 14px;
+
+	line-height: 14px;
+	text-align: center;
+	text-indent: 0;
+	font: normal bold 10px/13px Tahoma,sans-serif;
+
+	color: inherit;
+	background: transparent none no-repeat -100em -100em;
+}
+
+/* Applied to 'focused' tooltips e.g. most recently displayed/interacted with */
+.qtip-focus{}
+
+/* Applied on hover of tooltips i.e. added/removed on mouseenter/mouseleave respectively */
+.qtip-hover{}
+
+/* Default tooltip style */
+.qtip-default{
+	border-width: 1px;
+	border-style: solid;
+	border-color: darken(@highlight, 10%);
+
+	background-color: @highlight;
+}
+
+.qtip-default .qtip-titlebar{
+	background-color: #FFEF93;
+}
+
+.qtip-default .qtip-icon{
+	border-color: #CCC;
+	background: #F1F1F1;
+	color: #777;
+}
+
+.qtip-default .qtip-titlebar .qtip-close{
+	border-color: #AAA;
+	color: #111;
+}
+
+
+.qtip-shadow{
+	-webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* IE9 fix - removes all filters */
+.qtip:not(.ie9haxors) div.qtip-content,
+.qtip:not(.ie9haxors) div.qtip-titlebar{
+	filter: none;
+	-ms-filter: none;
+}
+
+.qtip .qtip-tip{
+	margin: 0 auto;
+	overflow: hidden;
+	z-index: 10;
+
+}
+
+/* Opera bug #357 - Incorrect tip position
+https://github.com/Craga89/qTip2/issues/367 */
+x:-o-prefocus, .qtip .qtip-tip{
+	visibility: hidden;
+}
+
+.qtip .qtip-tip,
+.qtip .qtip-tip .qtip-vml,
+.qtip .qtip-tip canvas{
+	position: absolute;
+
+	color: #123456;
+	background: transparent;
+	border: 0 dashed transparent;
+}
+
+.qtip .qtip-tip canvas{ top: 0; left: 0; }
+
+.qtip .qtip-tip .qtip-vml{
+	behavior: url(#default#VML);
+	display: inline-block;
+	visibility: visible;
+}
 }
 
  /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
