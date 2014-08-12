@@ -35,22 +35,22 @@
 		</section>
 
 		<div class="width clearfix center block columna xmall-12 sub-menu">
-			<a href="#menu" class="block text-center columna xmall-3 ">Menú</a>
+			<a href="#menu" class="block text-center columna xmall-6 medium-3 ">Menú</a>
 
-			<a href="#woks" class="block text-center columna xmall-3 ">Woks</a>
+			<a href="#woks" class="block text-center columna xmall-6 medium-3 ">Woks</a>
 
-			<a href="#combos" class="block text-center columna xmall-3 ">Combos</a>
+			<a href="#combos" class="block text-center columna xmall-6 medium-3 ">Combos</a>
 
 			
-			<a href="#bebidas" class="block text-center columna xmall-3 ">Bebidas</a>
+			<a href="#bebidas" class="block text-center columna xmall-6 medium-3 ">Bebidas</a>
 			
 		</div>
 
 		<h2 class="block text-center">
-			<span class="center">Menú</span>
+			<span id="menu" class="center">Menú</span>
 		</h2>
 
-		<section id="menu" class="menu grid width clearfix">
+		<section  class="menu grid width clearfix">
 			<?php
 				$menuArgs = array(
 					'post_type' 		=> 'menu',
@@ -108,10 +108,10 @@
 		<div class="clear"></div>
 
 		<h2 class="block text-center">
-			<span class="center">Woks</span>
+			<span id="woks" class="center">Woks</span>
 		</h2>
 
-		<section id="woks" class="menu grid width clearfix">
+		<section  class="menu grid width clearfix">
 			<?php
 				$menuArgs = array(
 					'post_type' 		=> 'menu',
@@ -168,10 +168,10 @@
 		<div class="clear"></div>
 
 		<h2 class="block text-center">
-			<span class="center">Combos</span>
+			<span id="combos" class="center">Combos</span>
 		</h2>
 
-		<section id="combos" class="menu grid width clearfix">
+		<section  class="menu grid width clearfix">
 			<?php
 				$menuArgs = array(
 					'post_type' 		=> 'menu',
@@ -228,10 +228,10 @@
 		<div class="clear"></div>
 
 		<h2 class="block text-center">
-			<span class="center">Bebidas</span>
+			<span id="bebidas" class="center">Bebidas</span>
 		</h2>
 
-		<section id="bebidas" class="menu grid width clearfix">
+		<section  class="menu grid width clearfix">
 			<?php
 				$menuArgs = array(
 					'post_type' 		=> 'menu',
