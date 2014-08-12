@@ -271,7 +271,7 @@ h1 {  }
 h2 { margin:0 0 @margen*2 0; .font(2em, 1.5em, 'canter'); text-align: center;
 	span{ padding: @margen/2 @margen; color: @claro; background: @highlight; }
 }
-h3 { margin:0; .font(2em, 1em, 'canter'); color:@highlight; text-transform: uppercase; }
+h3 { margin: 0 0 (@margen/2) 0; padding-left: 10px; .font(2em, 1, 'canter'); color:@claro; background: @highlight; text-transform: uppercase; cursor: pointer; }
 h4 { margin:0 0 @margen 0; .font(2em, 1em, 'canter'); color:@highlight; text-transform: uppercase; }
 
 p{ margin-bottom: 1em; }
@@ -297,7 +297,7 @@ section{ margin-bottom: @margen; }
 section + p { color: @secundario; }
 
 .grid{ width:100%;
-	article{ margin-bottom: @margen;
+	article{ margin-bottom: (@margen/2);
 		p:last-child{ margin-bottom: 0; }
 	}
 }
@@ -351,7 +351,7 @@ header { padding:@margen*2 0;
 
 .categoria {
 	h3{.font (2.5em, 1.2em, 'canter');}
-	span { margin:0 0 @margen 0; .font(1em, 1em); color:@secundario; }
+	span { margin:0 0 (@margen/2) 0; .font(1em, 1em); color:@secundario; }
 	ul { width: 100%; margin:0; list-style-type: none;
 		li { margin-bottom: (@margen/2); color: @obscuro;
 			.nombre{ cursor: pointer; }
@@ -376,7 +376,7 @@ header { padding:@margen*2 0;
 	> div { margin-bottom: @margen*2; }
 	form { width: 100%;
 		.clear{ margin-bottom: @margen; }
-		input[type="text"], textarea { width: 100%; height: (@margen*2); padding: @margen/2; border: 1px solid @highlight; .font(1.2em, 1em);
+		input[type="text"], input[type="tel"], input[type="email"], input[type="number"], textarea { width: 100%; height: (@margen*2); padding: @margen/2; border: 1px solid @highlight; .font(1.2em, 1em);
 			&:focus{ outline-color: @highlight; }
 		}
 		textarea{ height: (@margen*6); }
@@ -395,7 +395,7 @@ header { padding:@margen*2 0;
 /**Q-tip**/
 
  #qtip-0, #qtip-1, #qtip-2{
-	
+
 	visibility: hidden;
 }
 
@@ -764,9 +764,6 @@ header { padding:@margen*2 0;
 	.no-center-medium { margin:0 1%; float:left !important; }
 	.medium-right{float:right !important;}
 
-	h3 { .font(3em, 1em, 'canter'); }
-
-
 
 	//========================//
 
@@ -788,15 +785,25 @@ header { padding:@margen*2 0;
 		}
 	}
 
+	h3 { color:@highlight; background: none; cursor: default; }
+
 	.redes, .pedidos{padding-top: 1%;
 		a{}
 	}
 
 	.sub-menu{
-	h2{margin-bottom: @margen*2; 
+		h2{margin-bottom: @margen*2;}
 		a{border: solid 2px @highlight; padding: @margen @margen*1.5;}
 	}
-}
+
+	.categoria{
+		span { margin:0 0 @margen 0; }
+	}
+
+	.grid{
+		article{ margin-bottom: @margen; }
+	}
+
 }
 
 
@@ -860,7 +867,7 @@ header { padding:@margen*2 0;
 	.redes{ .right;}
 
 	.sub-menu{
-	h2{margin-bottom: @margen*2; 
+	h2{margin-bottom: @margen*2;
 		a{border: solid 2px @highlight; padding: @margen @margen*2;}
 	}
 }
@@ -879,7 +886,7 @@ header { padding:@margen*2 0;
  */
 
  #qtip-0, #qtip-1, #qtip-2{
-	
+
 	visibility: visible;
 }
 

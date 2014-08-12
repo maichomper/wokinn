@@ -41,9 +41,9 @@
 
 			<a href="#combos" class="block text-center columna xmall-6 medium-3 ">Combos</a>
 
-			
+
 			<a href="#bebidas" class="block text-center columna xmall-6 medium-3 ">Bebidas</a>
-			
+
 		</div>
 
 		<h2 class="block text-center">
@@ -65,7 +65,13 @@
 				<article  class="categoria columna xmall-12 medium-6 large-4 clearfix">
 					<?php the_post_thumbnail( "medium" ); ?>
 					<h3><?php the_title(); ?></h3>
-					<span class="block"><?php the_content(); ?></span>
+					<?php
+					ob_start();
+					the_content();
+					$content = ob_get_clean();
+					if ( $content != '' ){ ?>
+						<span class="block"><?php the_content(); ?></span>
+					<?php } ?>
 					<ul>
 						<?php
 

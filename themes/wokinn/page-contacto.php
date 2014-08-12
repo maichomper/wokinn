@@ -25,20 +25,20 @@
 				<p><?php echo get_post_meta($post->ID, '_direccion_meta', true); ?></p>
 			</address>
 		</div>
-		<form class="columna xmall-12 medium-6 clearfix forma-contacto">
+		<form action="<?php echo site_url('contacto-recibido'); ?>" method="post" class="columna xmall-12 medium-6 clearfix forma-contacto">
 			<h4 class="text-center">Nos interesa tu opinión</h4>
 			<label for="nombre">Nombre</label>
 			<input class="required" name="nombre" type="text">
 			<div class="clear"></div>
 			<label for="email">Email</label>
-			<input class="required email" name="email" type="text">
+			<input class="required email" name="email" type="email">
 			<div class="clear"></div>
 			<label for="mensaje">Mensaje</label>
 			<textarea class="required" name="mensaje"></textarea>
 			<input class="columna xmall-12 medium-6 block center" type="submit" value="enviar">
 		</form>
 		<div class="columna xmall-12 medium-6" id="map">
-			
+
 		</div>
 	</section>
 

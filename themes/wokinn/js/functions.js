@@ -3,6 +3,7 @@
 	"use strict";
 
 	$(function(){
+		var isActive;
 
 		// Controla js en .large
 		mediaCheck({
@@ -19,15 +20,27 @@
 		mediaCheck({
 		    media: '(min-width: 40.063em)',
 		    	entry: function() {
-		      		/*alturaHeader();
+					/*alturaHeader();
 		      		console.log('enter medium');
 		      		$(window).resize( function(){
 						alturaHeader();
 					});*/
 					$('.categoria ul').slideDown('fast');
+					if ( $('.grid').length > 0 ){
+						console.log(seccionActual);
+						if (seccionActual == 'nosotros')
+							isotopeA();
+						isotope();
+					}
 	    		},
 		    	exit: function() {
 		    		console.log('exit medium');
+		    		console.log(isActive);
+		    		if ( isActive == true ){
+		    			isotopeDestroy();
+		    			console.log('después de destruir');
+		    		}
+
 		    	}
 		});
 		// Controla js en .small y .xmall
@@ -35,13 +48,10 @@
 		    media: '(max-width: 40.062em)',
 		    	entry: function() {
 		    		//$('header > div > div').css('height', '100px');
-		      		console.log('enter small');
-		      		
 		      		togglePlatillosMovil();
 		      		$('.categoria ul').slideUp('slow');
 	    		},
 		    	exit: function() {
-		    		console.log('exit medium');
 		    	}
 		});
 
@@ -85,16 +95,6 @@
 		if(seccionActual == 'contacto')
 			creaMapa();
 
-
-		if ( $('.grid').length > 0 ){
-			console.log(seccionActual);
-			if (seccionActual == 'nosotros')
-				isotopeA();
-
-			isotope();
-
-		}
-
 		function isotope(){
 			var $container = $('.grid').imagesLoaded( function() {
 				$container.isotope({
@@ -102,6 +102,8 @@
 				  layoutMode: 'masonry'
 				});
 			});
+			isActive = true;
+			console.log(isActive);
 		}
 
 		function isotopeA(){
@@ -113,15 +115,18 @@
 			});
 		}
 
+		function isotopeDestroy(){
+			var $container = $('.grid');
+			$container.isotope('destroy');
+		}
+
 		function validacion(forma){
 			$(forma).validate();
-			//console.log($(forma));
 		}
 
 		///////////////////////////////////
 		/////////// DESKTOP /////////////
 		///////////////////////////////////
-
 
 		validacion('.forma-contacto');
 
@@ -137,6 +142,7 @@
 		var alturaH1 = $('h1').height();
 		$('header > div > .bloque-datos').height(alturaH1);
 	}
+
 	function mostrarMenu() {
 		$(window).resize(function(){
 			if ($(window).width() > 750)
@@ -145,8 +151,8 @@
 		   		$('.navegacion').attr('style', 'display: none');
 		});
 	}
-	function toggleMenuMovil(){
 
+	function toggleMenuMovil(){
 		$('#btn-movil').on('click', function(e){
 			e.preventDefault();
 			if($('.navegacion').css('display')=='none'){
@@ -193,11 +199,13 @@
 	function togglePlatillosMovil(){
 		$('.categoria h3').on('click', function(){
 			var platillos = $(this).parent().find('ul');
-			if(platillos.css('display') == 'none')
+			if(platillos.css('display') == 'none'){
 				platillos.slideDown('slow');
-			else
+				console.log('display none');
+			} else {
 				platillos.slideUp('fast');
-
+				console.log('display else');
+			}
 		});
 	}
 

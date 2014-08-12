@@ -22,25 +22,28 @@
 	?>
 
 	<section class="contacto columna xmall-12 medium-6">
-		<form class="columna xmall-12 clearfix forma-contacto">
+		<form action="<?php echo site_url('evento-recibido'); ?>" method="post" class="columna xmall-12 clearfix forma-contacto">
 			<h4 class="text-center">Nos interesa tu opinión</h4>
 			<label for="nombre">Nombre</label>
 			<input class="required" name="nombre" type="text">
 			<div class="clear"></div>
-			<label for="dirección">Dirección</label>
-			<input class="required" name="nombre" type="text">
+			<label for="direccion">Dirección</label>
+			<input class="required" name="direccion" type="text">
 			<div class="clear"></div>
 			<label for="email">Email</label>
-			<input class="required email" name="email" type="text">
+			<input class="required email" name="email" type="email">
 			<div class="clear"></div>
 			<label for="telefono">Teléfono</label>
-			<input class="required email" name="email" type="text">
+			<input class="required" name="telefono" type="number">
+			<div class="clear"></div
+			<label for="numero">Número de personas</label>
+			<input class="required numero" name="numero" type="number">
 			<div class="clear"></div>
 			<label for="platillos">Platillos que te interesan</label>
 			<textarea class="required" name="platillos"></textarea>
 			<input class="columna xmall-12 medium-6 block center" type="submit" value="enviar">
 		</form>
 	</section>
-	
+
 
 <?php get_footer(); ?>

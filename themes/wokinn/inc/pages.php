@@ -28,5 +28,27 @@
 			wp_insert_post( $page, true );
 		}
 
+		// Evento recibido
+		if( ! get_page_by_path('evento-recibido') ){
+			$page = array(
+				'post_author' => 1,
+				'post_status' => 'publish',
+				'post_title'  => 'Evento recibido',
+				'post_type'   => 'page'
+			);
+			wp_insert_post( $page, true );
+		}
+
+		// Contacto recibido
+		if( ! get_page_by_path('contacto-recibido') ){
+			$page = array(
+				'post_author' => 1,
+				'post_status' => 'publish',
+				'post_title'  => 'Contacto recibido',
+				'post_type'   => 'page'
+			);
+			wp_insert_post( $page, true );
+		}
+
 
 	});
