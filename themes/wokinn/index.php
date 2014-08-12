@@ -62,11 +62,11 @@
 
 				if( $menuQuery->have_posts() ) : while( $menuQuery->have_posts() ) : $menuQuery->the_post();
 			?>
-				<article  class="categoria columna xmall-12 medium-4 clearfix">
+				<article  class="categoria columna xmall-12 medium-6 large-4 clearfix">
 					<?php the_post_thumbnail( "medium" ); ?>
 					<h3><?php the_title(); ?></h3>
 					<span class="block"><?php the_content(); ?></span>
-					<ul class="no-xmall medium">
+					<ul>
 						<?php
 
 							for ($i = 1; $i <= 25; $i++) {
@@ -98,7 +98,6 @@
 
 					</ul>
 				</article>
-				<div class="clear"></div>
 			<?php
 				endwhile; endif;  wp_reset_query();
 			?>
@@ -183,7 +182,7 @@
 
 				if( $menuQuery->have_posts() ) : while( $menuQuery->have_posts() ) : $menuQuery->the_post();
 			?>
-				<article  class="categoria columna xmall-12 medium-3 clearfix">
+				<article  class="categoria columna xmall-12 medium-6 large-3 clearfix">
 					<?php the_post_thumbnail( "medium" ); ?>
 					<h3><?php the_title(); ?></h3>
 					<span class="block"><?php the_content(); ?></span>
@@ -243,7 +242,7 @@
 
 				if( $menuQuery->have_posts() ) : while( $menuQuery->have_posts() ) : $menuQuery->the_post();
 			?>
-				<article  class="categoria columna xmall-12 medium-4 clearfix">
+				<article  class="categoria columna xmall-12 medium-6 large-4 clearfix">
 					<?php the_post_thumbnail( "medium" ); ?>
 					<h3><?php the_title(); ?></h3>
 					<span class="block"><?php the_content(); ?></span>

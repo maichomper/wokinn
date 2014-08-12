@@ -4,16 +4,27 @@
 
 	$(function(){
 
-
-		// Controla js en .medium
+		// Controla js en .large
 		mediaCheck({
-		    media: '(min-width: 40.063em)',
+		    media: '(min-width: 64.063em)',
 		    	entry: function() {
 		      		alturaHeader();
 		      		console.log('enter medium');
 		      		$(window).resize( function(){
 						alturaHeader();
 					});
+	    		}
+		});
+		// Controla js en .medium
+		mediaCheck({
+		    media: '(min-width: 40.063em)',
+		    	entry: function() {
+		      		/*alturaHeader();
+		      		console.log('enter medium');
+		      		$(window).resize( function(){
+						alturaHeader();
+					});*/
+					$('.categoria ul').slideDown('fast');
 	    		},
 		    	exit: function() {
 		    		console.log('exit medium');
@@ -23,9 +34,11 @@
 		mediaCheck({
 		    media: '(max-width: 40.062em)',
 		    	entry: function() {
-		    		$('header > div > div').css('height', '100px');
+		    		//$('header > div > div').css('height', '100px');
 		      		console.log('enter small');
+		      		
 		      		togglePlatillosMovil();
+		      		$('.categoria ul').slideUp('slow');
 	    		},
 		    	exit: function() {
 		    		console.log('exit medium');
@@ -179,8 +192,11 @@
 
 	function togglePlatillosMovil(){
 		$('.categoria h3').on('click', function(){
-			$(this).parent().find('ul').removeClass('no-xmall');
-			$(this).parent().find('ul').addClass('block');
+			var platillos = $(this).parent().find('ul');
+			if(platillos.css('display') == 'none')
+				platillos.slideDown('slow');
+			else
+				platillos.slideUp('fast');
 
 		});
 	}
