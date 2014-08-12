@@ -5,6 +5,7 @@
 	$(function(){
 		var isActive;
 
+
 		// Controla js en .large
 		mediaCheck({
 		    media: '(min-width: 64.063em)',
@@ -25,7 +26,6 @@
 		      		$(window).resize( function(){
 						alturaHeader();
 					});*/
-					$('.categoria ul').slideDown('fast');
 					if ( $('.grid').length > 0 ){
 						console.log(seccionActual);
 						if (seccionActual == 'nosotros')
@@ -47,9 +47,7 @@
 		mediaCheck({
 		    media: '(max-width: 40.062em)',
 		    	entry: function() {
-		    		//$('header > div > div').css('height', '100px');
-		      		togglePlatillosMovil();
-		      		$('.categoria ul').slideUp('slow');
+	    			togglePlatillosMovil();
 	    		},
 		    	exit: function() {
 		    	}
@@ -197,8 +195,9 @@
 	}
 
 	function togglePlatillosMovil(){
-		$('.categoria h3').on('click', function(){
+		$('.categoria h3').unbind('click').on('click', function(){
 			var platillos = $(this).parent().find('ul');
+			console.log('twice');
 			if(platillos.css('display') == 'none'){
 				platillos.slideDown('slow');
 				console.log('display none');
