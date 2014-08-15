@@ -46,8 +46,10 @@
 
 		</div>
 
+		<div id="menu" class="clear"></div>
+
 		<h2 class="block text-center">
-			<span id="menu" class="center greenborder">Menú</span>
+			<span  class="center greenborder">Menú</span>
 		</h2>
 
 		<section  class="menu grid width clearfix">
@@ -110,10 +112,10 @@
 
 		</section>
 
-		<div class="clear"></div>
+		<div id="woks" class="clear"></div>
 
 		<h2 class="block text-center">
-			<span id="woks" class="center greenborder">Woks</span>
+			<span  class="center greenborder">Woks</span>
 		</h2>
 
 		<section  class="menu grid width clearfix">

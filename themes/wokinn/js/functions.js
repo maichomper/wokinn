@@ -188,7 +188,9 @@
 			var mapOptions = {
 				zoom: 17,
 				center: centro,
-				styles: styles
+				styles: styles,
+				scaleControl: false,
+				scrollwheel: false,
 			};
 			map = new google.maps.Map(document.getElementById('map'),
 			mapOptions);
