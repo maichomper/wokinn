@@ -35,22 +35,20 @@
 		</section>
 
 		<div class="width clearfix center block columna xmall-12 sub-menu">
-			<a href="#menu" class="block text-center columna xmall-6 medium-3 ">Menú</a>
-
-			<a href="#woks" class="block text-center columna xmall-6 medium-3 ">Woks</a>
-
-			<a href="#combos" class="block text-center columna xmall-6 medium-3 ">Combos</a>
-
-
-			<a href="#bebidas" class="block text-center columna xmall-6 medium-3 ">Bebidas</a>
+			<a data-seccion="seccion-menu" href="#" class="block text-center columna xmall-6 medium-3 ">Menú</a>
+			<a data-seccion="seccion-woks" href="#" class="block text-center columna xmall-6 medium-3 ">Woks</a>
+			<a data-seccion="seccion-combos" href="#" class="block text-center columna xmall-6 medium-3 ">Combos</a>
+			<a data-seccion="seccion-bebidas" href="#" class="block text-center columna xmall-6 medium-3 ">Bebidas</a>
 
 		</div>
 
+		<div id="seccion-menu" class="clear"></div>
+
 		<h2 class="block text-center">
-			<span id="menu" class="center greenborder">Menú</span>
+			<span class="center greenborder">Menú</span>
 		</h2>
 
-		<section id="seccion-menu" class="menu grid width clearfix">
+		<section class="menu grid width clearfix">
 			<?php
 				$menuArgs = array(
 					'post_type' 		=> 'menu',
@@ -72,7 +70,7 @@
 					if ( $content != '' ){ ?>
 						<span class="block"><?php the_content(); ?></span>
 					<?php } ?>
-					<ul>
+					<ul id="ul-menu">
 						<?php
 
 							for ($i = 1; $i <= 25; $i++) {
@@ -110,13 +108,13 @@
 
 		</section>
 
-		<div class="clear"></div>
+		<div id="seccion-woks" class="clear"></div>
 
 		<h2 class="block text-center">
-			<span id="woks" class="center greenborder">Woks</span>
+			<span class="center greenborder">Woks</span>
 		</h2>
 
-		<section  class="menu grid width clearfix">
+		<section class="menu grid width clearfix">
 			<?php
 				$menuArgs = array(
 					'post_type' 		=> 'menu',
@@ -173,7 +171,7 @@
 		<div class="clear"></div>
 
 		<h2 class="block text-center">
-			<span id="combos" class="center greenborder">Combos</span>
+			<span id="seccion-combos" class="center greenborder">Combos</span>
 		</h2>
 
 		<section  class="menu grid width clearfix">
@@ -233,7 +231,7 @@
 		<div class="clear"></div>
 
 		<h2 class="block text-center">
-			<span id="bebidas" class="center greenborder">Bebidas</span>
+			<span id="seccion-bebidas" class="center greenborder">Bebidas</span>
 		</h2>
 
 		<section  class="menu grid width clearfix">
