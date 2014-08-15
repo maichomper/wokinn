@@ -23,7 +23,7 @@
 
 	<section class="contacto columna xmall-12 medium-6">
 		<form action="<?php echo site_url('evento-recibido'); ?>" method="post" class="columna xmall-12 clearfix forma-contacto">
-			<h4 class="text-center">Nos interesa tu opinión</h4>
+			<h4 class="text-center">Cotiza tu evento</h4>
 			<label for="nombre">Nombre</label>
 			<input class="required" name="nombre" type="text">
 			<div class="clear"></div>

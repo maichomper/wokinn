@@ -15,8 +15,29 @@
 		      		$(window).resize( function(){
 						alturaHeader();
 					});
+
+					$('.hasTooltip').each(function() {
+			$(this).qtip({
+				content: {
+					text: $(this).next('div')
+				},
+				position: {
+			        viewport: $(window),
+			        my: 'bottom center',
+			        at: 'center',
+			        target: $(this).find('.nombre'),
+			    },
+			    events: {
+					render: function(event, api) {
+						var elem = api.elements.tip;
+					}
+				}
+			});
+		});
 	    		}
 		});
+
+
 		// Controla js en .medium
 		mediaCheck({
 		    media: '(min-width: 40.063em)',
@@ -54,24 +75,7 @@
 		});
 
 		//TOOLTIP
-		$('.hasTooltip').each(function() {
-			$(this).qtip({
-				content: {
-					text: $(this).next('div')
-				},
-				position: {
-			        viewport: $(window),
-			        my: 'bottom center',
-			        at: 'center',
-			        target: $(this).find('.nombre'),
-			    },
-			    events: {
-					render: function(event, api) {
-						var elem = api.elements.tip;
-					}
-				}
-			});
-		});
+		
 
 		//Fancybox
 	    $('.fancybox').fancybox({

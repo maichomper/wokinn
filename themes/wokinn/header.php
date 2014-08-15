@@ -43,9 +43,9 @@
 					<div class="columna xmall-12 medium-10 clearfix bloque-datos">
 						
 						<div class="pedidos columna xmall-12 medium-11 large-11 center block">
-							<p class="columna xmall-12 medium-4 large-4">Pedidos:<br>
-							5207-2840 / 2619</p>
-							<p class="columna xmall-12 medium-6 large-6">Álvaro Obregón 187-A<wbr> Col. Roma Norte Del. Cuauhtémoc 06700 México D.F.</p>
+							<p class="columna xmall-12 medium-4 large-4">Servicio a domicilio:<br>
+							5207-2840 / 5207-2619</p>
+							<p class="columna xmall-12 medium-6 large-6">Álvaro Obregón 187-A<wbr> Col. Roma Norte Del. Cuauhtémoc</p>
 
 							<div class="span no-xmall medium medium-2 large-1 redes right">
 								<a href="https://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a>
