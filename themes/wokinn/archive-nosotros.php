@@ -4,6 +4,22 @@
 		<span class="center">Nosotros</span>
 	</h2>
 
+	<section>
+		<div class="columna xmall-12 medium-4">
+			<h2>Misión</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque vel necessitatibus odit, adipisci aliquid dolorem, repellat nostrum doloremque, earum nulla possimus inventore. Dolor numquam perferendis dolore nulla consequatur adipisci reiciendis.</p>
+		</div>
+		<div class="columna xmall-12 medium-4">
+			<h2>Visión</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque vel necessitatibus odit, adipisci aliquid dolorem, repellat nostrum doloremque, earum nulla possimus inventore. Dolor numquam perferendis dolore nulla consequatur adipisci reiciendis.</p>
+		</div>
+		<div class="columna xmall-12 medium-4">
+			<h2><span>Valores</span></h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque vel necessitatibus odit, adipisci aliquid dolorem, repellat nostrum doloremque, earum nulla possimus inventore. Dolor numquam perferendis dolore nulla consequatur adipisci reiciendis.</p>
+		</div>
+		
+	</section>
+
 	<h3 class="block ">
 		<span class="center">Nuestra Cocina</span>
 	</h3>

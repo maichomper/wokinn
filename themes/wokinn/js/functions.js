@@ -11,29 +11,29 @@
 		    media: '(min-width: 64.063em)',
 		    	entry: function() {
 		      		alturaHeader();
-		      		console.log('enter medium');
+		      		console.log('enter large');
 		      		$(window).resize( function(){
 						alturaHeader();
 					});
 
 					$('.hasTooltip').each(function() {
-			$(this).qtip({
-				content: {
-					text: $(this).next('div')
-				},
-				position: {
-			        viewport: $(window),
-			        my: 'bottom center',
-			        at: 'center',
-			        target: $(this).find('.nombre'),
-			    },
-			    events: {
-					render: function(event, api) {
-						var elem = api.elements.tip;
-					}
-				}
-			});
-		});
+						$(this).qtip({
+							content: {
+								text: $(this).next('div')
+							},
+							position: {
+						        viewport: $(window),
+						        my: 'bottom center',
+						        at: 'center',
+						        target: $(this).find('.nombre'),
+						    },
+						    events: {
+								render: function(event, api) {
+									var elem = api.elements.tip;
+								}
+							}
+						});
+					});
 	    		}
 		});
 
@@ -53,6 +53,10 @@
 							isotopeA();
 						isotope();
 					}
+
+					$('.hasTooltip').each(function() {
+						$(this).qtip('destroy');
+					});
 	    		},
 		    	exit: function() {
 		    		console.log('exit medium');
