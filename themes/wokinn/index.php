@@ -50,7 +50,7 @@
 			<span id="menu" class="center greenborder">Menú</span>
 		</h2>
 
-		<section  class="menu grid width clearfix">
+		<section id="seccion-menu" class="menu grid width clearfix">
 			<?php
 				$menuArgs = array(
 					'post_type' 		=> 'menu',
