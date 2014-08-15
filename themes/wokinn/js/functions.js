@@ -69,8 +69,13 @@
 		    media: '(max-width: 40.062em)',
 		    	entry: function() {
 	    			togglePlatillosMovil();
-	    			$('.categoria ul').hide();
+	    			$('.categoria ul').not('#ul-menu').hide();
 	    		}
+		});
+
+		$('.sub-menu a').on('click', function(e){
+			e.preventDefault();
+			scrollTop($(this));
 		});
 
 		//Fancybox
@@ -205,6 +210,14 @@
 				platillos.slideUp('fast');
 			}
 		});
+	}
+
+	function scrollTop(elemento){
+		var seccion = elemento.data('seccion');
+		var divPosicion = $('#'+seccion).offset().top;
+			divPosicion = divPosicion - 100;
+
+		$('html, body').animate({scrollTop: divPosicion}, 400);
 	}
 
 })(jQuery);

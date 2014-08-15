@@ -663,6 +663,9 @@ header #btn-movil a:hover {
 .categoria ul li span {
   font: 0.8em / 0.4em 'bitter-regular';
 }
+.categoria #ul-menu {
+  display: block;
+}
 .pedidos {
   padding-top: 1%;
 }
