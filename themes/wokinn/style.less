@@ -392,46 +392,6 @@ header { padding:@margen*2 0;
 
 }
 
-
-/**Q-tip**/
-
- .qtip{
-	position: absolute;
-	left: -28000px;
-	top: -28000px;
-	display: none;
-
-	max-width: 600px;
-	min-width: 400px;
-
-	font-size: 10.5px;
-	line-height: 12px;
-
-	direction: ltr;
-
-	box-shadow: none;
-	padding: 0;
-	visibility: hidden !important;
-}
-
-.qtip-content{
-	position: relative;
-	padding: (@margen/2);
-	overflow: hidden;
-
-	text-align: left;
-	word-wrap: break-word;
-	visibility: hidden !important;
-
-	img{ width: 100%; height: auto; }
-
-}
-
-.hasTooltip{
-	img{visibility: hidden !important;}
-}
-
-
 /*::::::::::::::::::::::::::: FANCYBOX :::::::::::::::::::: */
 
 /*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
@@ -926,9 +886,6 @@ header { padding:@margen*2 0;
  * Styles: css3
  */
 
- 
-
-
 
 .qtip{
 	position: absolute;
@@ -946,7 +903,6 @@ header { padding:@margen*2 0;
 
 	box-shadow: none;
 	padding: 0;
-	visibility: visible !important;
 }
 
 .qtip-content{
@@ -956,10 +912,8 @@ header { padding:@margen*2 0;
 
 	text-align: left;
 	word-wrap: break-word;
-	visibility: visible !important;
 
 	img{ width: 100%; height: auto; }
-
 }
 
 .qtip-titlebar{
@@ -1145,7 +1099,7 @@ x:-o-prefocus, .qtip .qtip-tip{
 
 	//========================//
 
-	
+
 
 }
 
