@@ -17,6 +17,7 @@
 					});
 
 					$('.hasTooltip').each(function() {
+						console.log($(this).next('div img'));
 						$(this).qtip({
 							content: {
 								text: $(this).next('div')
@@ -79,7 +80,7 @@
 		});
 
 		//TOOLTIP
-		
+
 
 		//Fancybox
 	    $('.fancybox').fancybox({
