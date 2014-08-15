@@ -4,12 +4,12 @@
 		<span class="center">Nosotros</span>
 	</h2>
 
-	<section class="width clearfix">
-		<div class="columna xmall-12 medium-6">
+	<section class="clearfix">
+		<div class="columna xmall-12 medium-4">
 			<h2>Misión</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque vel necessitatibus odit, adipisci aliquid dolorem, repellat nostrum doloremque, earum nulla possimus inventore. Dolor numquam perferendis dolore nulla consequatur adipisci reiciendis.</p>
 		</div>
-		<div class="columna xmall-12 medium-6">
+		<div class="columna xmall-12 medium-4">
 			<h2>Visión</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque vel necessitatibus odit, adipisci aliquid dolorem, repellat nostrum doloremque, earum nulla possimus inventore. Dolor numquam perferendis dolore nulla consequatur adipisci reiciendis.</p>
 		</div>
@@ -23,8 +23,9 @@
 		<span class="center">Nuestra Cocina</span>
 	</h3>
 
-	<section class="nuestra-cocina grid width clearfix">
+	<section class="nuestra-cocina width grid clearfix">
 		<?php
+			$cocinaCounter = 1;
 			$cocinaArgs = array(
 				'post_type' 		=> 'nosotros',
 				'category_name'		=> 'cocina',
@@ -40,13 +41,12 @@
 				<p><?php the_content(); ?></p>
 			</article>
 		<?php
-			endwhile; endif;  wp_reset_query();
+			if($cocinaCounter %2 == 0) {
+				echo '<div class="clear"></div>';
+			}
+			$cocinaCounter++; endwhile; endif;  wp_reset_query();
 		?>
 	</section>
-
-	<div class="clear"></div>
-
-
 
 	<div class="clear"></div>
 
@@ -65,13 +65,8 @@
 
 		if( $familiaQuery->have_posts() ) : while( $familiaQuery->have_posts() ) : $familiaQuery->the_post();
 	?>
-<<<<<<< HEAD
 		<a href="#" class="columna xmall-6 medium-3 large-2 margin-bottom">
 			<?php the_post_thumbnail( "large" ); ?>
-=======
-		<a href="<?php echo $post->post_content; ?>" class="columna xmall-6 medium-3 large-2 margin-bottom">
-			<?php the_post_thumbnail( "medium" ); ?>
->>>>>>> 6359bda6d12d58a58c69d5ca6db432b64a00bd7f
 			<p><?php the_title(); ?></p>
 		</a>
 

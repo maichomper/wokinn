@@ -30,7 +30,7 @@
 		    media: '(min-width: 64.063em)',
 		    	entry: function() {
 		      		alturaHeader();
-		      		console.log('enter large');
+		      		$('nav').show();
 		      		$(window).resize( function(){
 						alturaHeader();
 					});
@@ -56,6 +56,7 @@
 						isotope();
 					}
 					$('.categoria ul').show();
+					$('nav').hide();
 	    		},
 		    	exit: function() {
 		    		console.log('exit medium');
