@@ -44,7 +44,7 @@
 						
 						<div class="pedidos columna xmall-12 medium-11 large-11 center block">
 							<p class="columna xmall-12 medium-4 large-4">Servicio a domicilio:<br>
-							5207-2840 / 5207-2619</p>
+							<a href="tel:5207-2840">5207-2840</a> / <a href="tel:5207-2619">5207-2619</a></p>
 							<p class="columna xmall-12 medium-6 large-6">Álvaro Obregón 187-A<wbr> Col. Roma Norte Del. Cuauhtémoc</p>
 
 							<div class="span no-xmall medium medium-2 large-1 redes right">
