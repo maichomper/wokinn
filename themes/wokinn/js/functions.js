@@ -5,6 +5,25 @@
 	$(function(){
 		var isActive;
 
+		//TOOLTIP
+		$('.hasTooltip').each(function() {
+			$(this).qtip({
+				content: {
+					text: $(this).next('div')
+				},
+				position: {
+			        viewport: $(window),
+			        my: 'bottom center',
+			        at: 'center',
+			        target: $(this).find('.nombre'),
+			    },
+			    events: {
+					render: function(event, api) {
+						var elem = api.elements.tip;
+					}
+				}
+			});
+		});
 
 		// Controla js en .large
 		mediaCheck({
@@ -36,6 +55,7 @@
 							isotopeA();
 						isotope();
 					}
+					$('.categoria ul').show();
 	    		},
 		    	exit: function() {
 		    		console.log('exit medium');
@@ -49,27 +69,8 @@
 		    media: '(max-width: 40.062em)',
 		    	entry: function() {
 	    			togglePlatillosMovil();
+	    			$('.categoria ul').hide();
 	    		}
-		});
-
-		//TOOLTIP
-		$('.hasTooltip').each(function() {
-			$(this).qtip({
-				content: {
-					text: $(this).next('div')
-				},
-				position: {
-			        viewport: $(window),
-			        my: 'bottom center',
-			        at: 'center',
-			        target: $(this).find('.nombre'),
-			    },
-			    events: {
-					render: function(event, api) {
-						var elem = api.elements.tip;
-					}
-				}
-			});
 		});
 
 		//Fancybox
