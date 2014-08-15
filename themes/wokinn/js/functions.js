@@ -15,25 +15,13 @@
 		      		$(window).resize( function(){
 						alturaHeader();
 					});
-
 					$('.hasTooltip').each(function() {
-						console.log($(this).next('div img'));
-						$(this).qtip({
-							content: {
-								text: $(this).next('div')
-							},
-							position: {
-						        viewport: $(window),
-						        my: 'bottom center',
-						        at: 'center',
-						        target: $(this).find('.nombre'),
-						    },
-						    events: {
-								render: function(event, api) {
-									var elem = api.elements.tip;
-								}
-							}
-						});
+						$(this).qtip('enable');
+					});
+	    		},
+	    		exit: function(){
+	    			$('.hasTooltip').each(function() {
+						$(this).qtip('disable');
 					});
 	    		}
 		});
@@ -43,30 +31,17 @@
 		mediaCheck({
 		    media: '(min-width: 40.063em)',
 		    	entry: function() {
-					/*alturaHeader();
-		      		console.log('enter medium');
-		      		$(window).resize( function(){
-						alturaHeader();
-					});*/
 					if ( $('.grid').length > 0 ){
-						console.log(seccionActual);
 						if (seccionActual == 'nosotros')
 							isotopeA();
 						isotope();
 					}
-
-					$('.hasTooltip').each(function() {
-						$(this).qtip('destroy');
-					});
 	    		},
 		    	exit: function() {
 		    		console.log('exit medium');
-		    		console.log(isActive);
 		    		if ( isActive == true ){
 		    			isotopeDestroy();
-		    			console.log('después de destruir');
 		    		}
-
 		    	}
 		});
 		// Controla js en .small y .xmall
@@ -74,13 +49,28 @@
 		    media: '(max-width: 40.062em)',
 		    	entry: function() {
 	    			togglePlatillosMovil();
-	    		},
-		    	exit: function() {
-		    	}
+	    		}
 		});
 
 		//TOOLTIP
-
+		$('.hasTooltip').each(function() {
+			$(this).qtip({
+				content: {
+					text: $(this).next('div')
+				},
+				position: {
+			        viewport: $(window),
+			        my: 'bottom center',
+			        at: 'center',
+			        target: $(this).find('.nombre'),
+			    },
+			    events: {
+					render: function(event, api) {
+						var elem = api.elements.tip;
+					}
+				}
+			});
+		});
 
 		//Fancybox
 	    $('.fancybox').fancybox({
@@ -110,7 +100,6 @@
 				});
 			});
 			isActive = true;
-			console.log(isActive);
 		}
 
 		function isotopeA(){
@@ -206,13 +195,11 @@
 	function togglePlatillosMovil(){
 		$('.categoria h3').unbind('click').on('click', function(){
 			var platillos = $(this).parent().find('ul');
-			console.log('twice');
+
 			if(platillos.css('display') == 'none'){
 				platillos.slideDown('slow');
-				console.log('display none');
 			} else {
 				platillos.slideUp('fast');
-				console.log('display else');
 			}
 		});
 	}
