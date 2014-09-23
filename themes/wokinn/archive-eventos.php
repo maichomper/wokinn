@@ -13,7 +13,7 @@
 		if( $eventosQuery->have_posts() ) : while( $eventosQuery->have_posts() ) : $eventosQuery->the_post();
 	?>
 		<section class="estufa-wok clearfix columna xmall-12 medium-6">
-			<?php the_post_thumbnail( "medium" ); ?>
+			<?php the_post_thumbnail( "large" ); ?>
 			<h3><?php the_title(); ?></h3>
 			<p><?php the_content(); ?></p>
 		</section>

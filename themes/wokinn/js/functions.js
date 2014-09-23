@@ -30,7 +30,6 @@
 		    media: '(min-width: 64.063em)',
 		    	entry: function() {
 		      		alturaHeader();
-		      		$('nav').show();
 		      		$(window).resize( function(){
 						alturaHeader();
 					});
@@ -56,7 +55,6 @@
 						isotope();
 					}
 					$('.categoria ul').show();
-					$('nav').hide();
 	    		},
 		    	exit: function() {
 		    		console.log('exit medium');
@@ -167,6 +165,7 @@
 			}
 		});
 	}
+
 
 	function creaMapa(){
 		var styles = [
