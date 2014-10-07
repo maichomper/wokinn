@@ -45,7 +45,7 @@
 		<div id="seccion-menu" class="clear"></div>
 
 		<h2 class="block text-center">
-			<span class="center greenborder">Menú</span>
+			<span class="center">Menú</span>
 		</h2>
 
 		<section class="menu grid width clearfix">
@@ -111,7 +111,7 @@
 		<div id="seccion-woks" class="clear"></div>
 
 		<h2 class="block text-center">
-			<span class="center greenborder">Woks</span>
+			<span class="center">Woks</span>
 		</h2>
 
 		<section class="menu grid width clearfix">
@@ -171,7 +171,7 @@
 		<div class="clear"></div>
 
 		<h2 class="block text-center">
-			<span id="seccion-combos" class="center greenborder">Combos</span>
+			<span id="seccion-combos" class="center">Combos</span>
 		</h2>
 
 		<section  class="menu grid width clearfix">
@@ -231,7 +231,7 @@
 		<div class="clear"></div>
 
 		<h2 class="block text-center">
-			<span id="seccion-bebidas" class="center greenborder">Bebidas</span>
+			<span id="seccion-bebidas" class="center">Bebidas</span>
 		</h2>
 
 		<section  class="menu grid width clearfix">
